@@ -1,0 +1,42 @@
+
+Schreibprozess:
+
+Hauptcontroller:
+Master_Datenpuffer: 	Größe der Daten + 1 Adressbyte
+Master_Sendelänge:		Länge der Daten + 1 Adressbyte
+Master_Leselänge:		Länge der Daten + 1 Adressbyte
+
+Senden von Daten:
+messageBuf[0] = Adresse | W
+messageBuf[1...n] = Daten ....
+TWI_Start_Transceiver_With_Data( messageBuf, Sendelänge);
+
+
+Was passiert im Slave?
+Er empfängt nur die Nettodaten, also ab Index 0 steht das was im Master ab Index 1 steht.
+Die Länge des Empfangs ist Master_Sendelänge-1.
+Mit der Funktion TWI_Get_Data_From_Transceiver(messageBuf, x ) werden die Daten in messageBuf geladen.
+Die Länge x kann entweder fix konfiguriert sein, oder sie wird mit TWI_Get_Data_Depth() geholt. Diese Funktion
+stammt von mir selbst, glaube ich.
+
+Die Daten sind nun also in messageBuf[0 ...n-1] abrufbar.
+
+
+
+Lesen:
+Bevor der Master lesen kann, muss der Slave gestartet werden.
+Weil der Slave nicht weiß, was der Master lesen will, muss der Master immer
+zuerst einen Schreibbefehl schicken, in dem steht, was der Slave vorbereiten muss.
+
+Vorbereiten der Daten:
+Slave schreibt in messageBuf[0...m] die Daten. Slave wird gestartet.
+
+Wie liest der Master:
+messageBuf[0] = Adresse | R
+TWI_Start_Transceiver_With_Data(messageBuf,   m+1)
+Also der Master muss wieder ein Byte mehr speichern, und diese Länge auch angeben.
+
+Nachdem der Master gelesen hat, muss er die Daten extrahieren.
+Das macht er mit TWI_Get_Data_From_Transceiver (messageBuf,  m+1). Auch hier wird also wieder ein Byte
+mehr angegeben als der Slave gesendet hat.
+Das erste Datenbyte befindet sich dann in Byte 1 messageBuf[1...m+1]. Im ersten Byte steht nur die Adresse.

@@ -1,0 +1,398 @@
+   1               		.file	"TWI_slave.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	TWI_Slave_Initialise
+  18               	TWI_Slave_Initialise:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25 0000 8093 BA00 		sts 186,r24
+  26               	.LM3:
+  27 0004 8FEF      		ldi r24,lo8(-1)
+  28               	.LVL1:
+  29 0006 8093 BB00 		sts 187,r24
+  30               	.LM4:
+  31 000a 84E0      		ldi r24,lo8(4)
+  32 000c 8093 BC00 		sts 188,r24
+  33               	/* epilogue start */
+  34               	.LM5:
+  35 0010 0895      		ret
+  36               	.LFE2:
+  38               	.global	TWI_Transceiver_Busy
+  40               	TWI_Transceiver_Busy:
+  41               	.LFB3:
+  42               	.LM6:
+  43               	/* prologue: function */
+  44               	/* frame size = 0 */
+  45               	.LM7:
+  46 0012 8091 BC00 		lds r24,188
+  47               	.LM8:
+  48 0016 8170      		andi r24,lo8(1)
+  49               	/* epilogue start */
+  50 0018 0895      		ret
+  51               	.LFE3:
+  53               	.global	TWI_Get_State_Info
+  55               	TWI_Get_State_Info:
+  56               	.LFB4:
+  57               	.LM9:
+  58               	/* prologue: function */
+  59               	/* frame size = 0 */
+  60               	.L6:
+  61               	.LBB10:
+  62               	.LBB11:
+  63               	.LM10:
+  64 001a 8091 BC00 		lds r24,188
+  65               	.LBE11:
+  66               	.LBE10:
+  67               	.LM11:
+  68 001e 80FD      		sbrc r24,0
+  69 0020 00C0      		rjmp .L6
+  70               	.LM12:
+  71 0022 8091 0000 		lds r24,TWI_state
+  72               	/* epilogue start */
+  73 0026 0895      		ret
+  74               	.LFE4:
+  76               	.global	TWI_Get_State
+  78               	TWI_Get_State:
+  79               	.LFB5:
+  80               	.LM13:
+  81               	/* prologue: function */
+  82               	/* frame size = 0 */
+  83               	.LM14:
+  84 0028 8091 0000 		lds r24,TWI_state
+  85               	/* epilogue start */
+  86 002c 0895      		ret
+  87               	.LFE5:
+  89               	.global	TWI_Start_Transceiver_With_Data
+  91               	TWI_Start_Transceiver_With_Data:
+  92               	.LFB6:
+  93               	.LM15:
+  94               	.LVL2:
+  95               	/* prologue: function */
+  96               	/* frame size = 0 */
+  97 002e 482F      		mov r20,r24
+  98 0030 292F      		mov r18,r25
+  99               	.LVL3:
+ 100               	.LVL4:
+ 101               	.L12:
+ 102               	.LBB12:
+ 103               	.LBB13:
+ 104               	.LM16:
+ 105 0032 8091 BC00 		lds r24,188
+ 106               	.LBE13:
+ 107               	.LBE12:
+ 108               	.LM17:
+ 109 0036 80FD      		sbrc r24,0
+ 110 0038 00C0      		rjmp .L12
+ 111               	.LM18:
+ 112 003a 6093 0000 		sts TWI_msgSize,r22
+ 113 003e A0E0      		ldi r26,lo8(TWI_buf)
+ 114 0040 B0E0      		ldi r27,hi8(TWI_buf)
+ 115 0042 842F      		mov r24,r20
+ 116 0044 922F      		mov r25,r18
+ 117 0046 9C01      		movw r18,r24
+ 118               	.LVL5:
+ 119 0048 F901      		movw r30,r18
+ 120 004a 00C0      		rjmp .L13
+ 121               	.L14:
+ 122               	.LM19:
+ 123 004c 8191      		ld r24,Z+
+ 124 004e 8D93      		st X+,r24
+ 125               	.L13:
+ 126               	.LM20:
+ 127 0050 8E2F      		mov r24,r30
+ 128 0052 841B      		sub r24,r20
+ 129 0054 8617      		cp r24,r22
+ 130 0056 00F0      		brlo .L14
+ 131               	.LM21:
+ 132 0058 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 133               	.LM22:
+ 134 005c 88EF      		ldi r24,lo8(-8)
+ 135 005e 8093 0000 		sts TWI_state,r24
+ 136               	.LM23:
+ 137 0062 85EC      		ldi r24,lo8(-59)
+ 138 0064 8093 BC00 		sts 188,r24
+ 139               	/* epilogue start */
+ 140               	.LM24:
+ 141 0068 0895      		ret
+ 142               	.LFE6:
+ 144               	.global	TWI_Start_Transceiver
+ 146               	TWI_Start_Transceiver:
+ 147               	.LFB7:
+ 148               	.LM25:
+ 149               	/* prologue: function */
+ 150               	/* frame size = 0 */
+ 151               	.L18:
+ 152               	.LBB14:
+ 153               	.LBB15:
+ 154               	.LM26:
+ 155 006a 8091 BC00 		lds r24,188
+ 156               	.LBE15:
+ 157               	.LBE14:
+ 158               	.LM27:
+ 159 006e 80FD      		sbrc r24,0
+ 160 0070 00C0      		rjmp .L18
+ 161               	.LM28:
+ 162 0072 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 163               	.LM29:
+ 164 0076 88EF      		ldi r24,lo8(-8)
+ 165 0078 8093 0000 		sts TWI_state,r24
+ 166               	.LM30:
+ 167 007c 85EC      		ldi r24,lo8(-59)
+ 168 007e 8093 BC00 		sts 188,r24
+ 169               	/* epilogue start */
+ 170               	.LM31:
+ 171 0082 0895      		ret
+ 172               	.LFE7:
+ 174               	.global	TWI_Get_Data_Depth
+ 176               	TWI_Get_Data_Depth:
+ 177               	.LFB8:
+ 178               	.LM32:
+ 179               	/* prologue: function */
+ 180               	/* frame size = 0 */
+ 181               	.LM33:
+ 182 0084 8091 0000 		lds r24,TWI_bufPtr
+ 183               	/* epilogue start */
+ 184 0088 0895      		ret
+ 185               	.LFE8:
+ 187               	.global	TWI_Get_Data_From_Transceiver
+ 189               	TWI_Get_Data_From_Transceiver:
+ 190               	.LFB9:
+ 191               	.LM34:
+ 192               	.LVL6:
+ 193               	/* prologue: function */
+ 194               	/* frame size = 0 */
+ 195 008a AC01      		movw r20,r24
+ 196               	.LVL7:
+ 197               	.L24:
+ 198               	.LBB16:
+ 199               	.LBB17:
+ 200               	.LM35:
+ 201 008c 8091 BC00 		lds r24,188
+ 202               	.LBE17:
+ 203               	.LBE16:
+ 204               	.LM36:
+ 205 0090 80FD      		sbrc r24,0
+ 206 0092 00C0      		rjmp .L24
+ 207               	.LM37:
+ 208 0094 8091 0000 		lds r24,TWI_statusReg
+ 209 0098 80FF      		sbrs r24,0
+ 210 009a 00C0      		rjmp .L25
+ 211 009c 20E0      		ldi r18,lo8(0)
+ 212 009e 30E0      		ldi r19,hi8(0)
+ 213 00a0 00C0      		rjmp .L26
+ 214               	.L27:
+ 215               	.LM38:
+ 216 00a2 FA01      		movw r30,r20
+ 217 00a4 E20F      		add r30,r18
+ 218 00a6 F31F      		adc r31,r19
+ 219 00a8 D901      		movw r26,r18
+ 220 00aa A050      		subi r26,lo8(-(TWI_buf))
+ 221 00ac B040      		sbci r27,hi8(-(TWI_buf))
+ 222 00ae 8C91      		ld r24,X
+ 223 00b0 8083      		st Z,r24
+ 224 00b2 2F5F      		subi r18,lo8(-(1))
+ 225 00b4 3F4F      		sbci r19,hi8(-(1))
+ 226               	.L26:
+ 227               	.LM39:
+ 228 00b6 2617      		cp r18,r22
+ 229 00b8 00F0      		brlo .L27
+ 230               	.LM40:
+ 231 00ba 8091 0000 		lds r24,TWI_statusReg
+ 232 00be 8D7F      		andi r24,lo8(-3)
+ 233 00c0 8093 0000 		sts TWI_statusReg,r24
+ 234               	.L25:
+ 235 00c4 8091 0000 		lds r24,TWI_statusReg
+ 236               	.LM41:
+ 237 00c8 8170      		andi r24,lo8(1)
+ 238               	/* epilogue start */
+ 239 00ca 0895      		ret
+ 240               	.LFE9:
+ 242               	.global	__vector_26
+ 244               	__vector_26:
+ 245               	.LFB10:
+ 246               	.LM42:
+ 247 00cc 1F92      		push __zero_reg__
+ 248 00ce 0F92      		push r0
+ 249 00d0 0FB6      		in r0,__SREG__
+ 250 00d2 0F92      		push r0
+ 251 00d4 1124      		clr __zero_reg__
+ 252 00d6 8F93      		push r24
+ 253 00d8 9F93      		push r25
+ 254 00da EF93      		push r30
+ 255 00dc FF93      		push r31
+ 256               	/* prologue: Signal */
+ 257               	/* frame size = 0 */
+ 258               	.LM43:
+ 259 00de 8091 B900 		lds r24,185
+ 260 00e2 8039      		cpi r24,lo8(-112)
+ 261 00e4 01F4      		brne .+2
+ 262 00e6 00C0      		rjmp .L34
+ 263 00e8 8139      		cpi r24,lo8(-111)
+ 264 00ea 00F4      		brsh .L39
+ 265 00ec 8037      		cpi r24,lo8(112)
+ 266 00ee 01F0      		breq .L33
+ 267 00f0 8038      		cpi r24,lo8(-128)
+ 268 00f2 01F4      		brne .+2
+ 269 00f4 00C0      		rjmp .L34
+ 270 00f6 8036      		cpi r24,lo8(96)
+ 271 00f8 01F0      		breq .+2
+ 272 00fa 00C0      		rjmp .L31
+ 273 00fc 00C0      		rjmp .L32
+ 274               	.L39:
+ 275 00fe 883A      		cpi r24,lo8(-88)
+ 276 0100 01F0      		breq .L36
+ 277 0102 893A      		cpi r24,lo8(-87)
+ 278 0104 00F4      		brsh .L40
+ 279 0106 803A      		cpi r24,lo8(-96)
+ 280 0108 01F0      		breq .+2
+ 281 010a 00C0      		rjmp .L31
+ 282 010c 00C0      		rjmp .L48
+ 283               	.L40:
+ 284 010e 883B      		cpi r24,lo8(-72)
+ 285 0110 01F0      		breq .L37
+ 286 0112 803C      		cpi r24,lo8(-64)
+ 287 0114 01F0      		breq .+2
+ 288 0116 00C0      		rjmp .L31
+ 289 0118 00C0      		rjmp .L50
+ 290               	.L36:
+ 291               	.LM44:
+ 292 011a 1092 0000 		sts TWI_bufPtr,__zero_reg__
+ 293               	.LM45:
+ 294 011e 3A98      		cbi 39-32,2
+ 295               	.L37:
+ 296               	.LM46:
+ 297 0120 8091 0000 		lds r24,TWI_bufPtr
+ 298 0124 8932      		cpi r24,lo8(41)
+ 299 0126 00F0      		brlo .L41
+ 300 0128 88E2      		ldi r24,lo8(40)
+ 301 012a 8093 0000 		sts TWI_bufPtr,r24
+ 302               	.L41:
+ 303               	.LM47:
+ 304 012e 9091 0000 		lds r25,TWI_bufPtr
+ 305 0132 E92F      		mov r30,r25
+ 306 0134 F0E0      		ldi r31,lo8(0)
+ 307 0136 E050      		subi r30,lo8(-(TWI_buf))
+ 308 0138 F040      		sbci r31,hi8(-(TWI_buf))
+ 309 013a 8081      		ld r24,Z
+ 310 013c 8093 BB00 		sts 187,r24
+ 311 0140 9F5F      		subi r25,lo8(-(1))
+ 312 0142 9093 0000 		sts TWI_bufPtr,r25
+ 313 0146 00C0      		rjmp .L49
+ 314               	.L50:
+ 315               	.LM48:
+ 316 0148 9091 0000 		lds r25,TWI_bufPtr
+ 317 014c 8091 0000 		lds r24,TWI_msgSize
+ 318 0150 9817      		cp r25,r24
+ 319 0152 01F4      		brne .L31
+ 320               	.LM49:
+ 321 0154 8091 0000 		lds r24,TWI_statusReg
+ 322 0158 8160      		ori r24,lo8(1)
+ 323 015a 8093 0000 		sts TWI_statusReg,r24
+ 324 015e 00C0      		rjmp .L48
+ 325               	.L33:
+ 326               	.LM50:
+ 327 0160 8091 0000 		lds r24,TWI_statusReg
+ 328 0164 8460      		ori r24,lo8(4)
+ 329 0166 8093 0000 		sts TWI_statusReg,r24
+ 330               	.L32:
+ 331               	.LM51:
+ 332 016a 8091 0000 		lds r24,TWI_statusReg
+ 333 016e 8260      		ori r24,lo8(2)
+ 334 0170 8093 0000 		sts TWI_statusReg,r24
+ 335               	.LM52:
+ 336 0174 1092 0000 		sts TWI_bufPtr,__zero_reg__
+ 337 0178 00C0      		rjmp .L49
+ 338               	.L34:
+ 339               	.LM53:
+ 340 017a 8091 0000 		lds r24,TWI_bufPtr
+ 341 017e 8932      		cpi r24,lo8(41)
+ 342 0180 00F0      		brlo .L45
+ 343 0182 88E2      		ldi r24,lo8(40)
+ 344 0184 8093 0000 		sts TWI_bufPtr,r24
+ 345               	.L45:
+ 346               	.LM54:
+ 347 0188 8091 0000 		lds r24,TWI_bufPtr
+ 348 018c 9091 BB00 		lds r25,187
+ 349 0190 E82F      		mov r30,r24
+ 350 0192 F0E0      		ldi r31,lo8(0)
+ 351 0194 E050      		subi r30,lo8(-(TWI_buf))
+ 352 0196 F040      		sbci r31,hi8(-(TWI_buf))
+ 353 0198 9083      		st Z,r25
+ 354 019a 8F5F      		subi r24,lo8(-(1))
+ 355 019c 8093 0000 		sts TWI_bufPtr,r24
+ 356               	.LM55:
+ 357 01a0 8091 0000 		lds r24,TWI_statusReg
+ 358 01a4 8160      		ori r24,lo8(1)
+ 359 01a6 8093 0000 		sts TWI_statusReg,r24
+ 360               	.L49:
+ 361               	.LM56:
+ 362 01aa 85EC      		ldi r24,lo8(-59)
+ 363 01ac 00C0      		rjmp .L47
+ 364               	.L31:
+ 365               	.LM57:
+ 366 01ae 8091 B900 		lds r24,185
+ 367 01b2 8093 0000 		sts TWI_state,r24
+ 368               	.L48:
+ 369               	.LM58:
+ 370 01b6 84E0      		ldi r24,lo8(4)
+ 371               	.L47:
+ 372 01b8 8093 BC00 		sts 188,r24
+ 373               	/* epilogue start */
+ 374               	.LM59:
+ 375 01bc FF91      		pop r31
+ 376 01be EF91      		pop r30
+ 377 01c0 9F91      		pop r25
+ 378 01c2 8F91      		pop r24
+ 379 01c4 0F90      		pop r0
+ 380 01c6 0FBE      		out __SREG__,r0
+ 381 01c8 0F90      		pop r0
+ 382 01ca 1F90      		pop __zero_reg__
+ 383 01cc 1895      		reti
+ 384               	.LFE10:
+ 386               	.global	TWI_statusReg
+ 387               	.global	TWI_statusReg
+ 388               		.section .bss
+ 391               	TWI_statusReg:
+ 392 0000 00        		.skip 1,0
+ 393               		.lcomm TWI_msgSize,1
+ 394               		.data
+ 397               	TWI_state:
+ 398 0000 F8        		.byte	-8
+ 399               		.lcomm TWI_buf,41
+ 400               		.lcomm TWI_bufPtr,1
+ 489               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 TWI_slave.c
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:2      *ABS*:0000003f __SREG__
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:3      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:4      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:5      *ABS*:00000034 __CCP__
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:18     .text:00000000 TWI_Slave_Initialise
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:40     .text:00000012 TWI_Transceiver_Busy
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:55     .text:0000001a TWI_Get_State_Info
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:397    .data:00000000 TWI_state
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:78     .text:00000028 TWI_Get_State
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:91     .text:0000002e TWI_Start_Transceiver_With_Data
+                             .bss:00000001 TWI_msgSize
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:393    .bss:00000002 TWI_buf
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:391    .bss:00000000 TWI_statusReg
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:146    .text:0000006a TWI_Start_Transceiver
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:176    .text:00000084 TWI_Get_Data_Depth
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:399    .bss:0000002b TWI_bufPtr
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:189    .text:0000008a TWI_Get_Data_From_Transceiver
+C:\DOKUME~1\MICHAE~1\LOKALE~1\Temp/cc7vmWGf.s:244    .text:000000cc __vector_26
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

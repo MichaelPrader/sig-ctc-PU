@@ -1,0 +1,2286 @@
+
+sig-ctc-PU.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000003a  00800100  00000ba4  00000c38  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000ba4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000431  0080013a  0080013a  00000c72  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  00000c72  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000037a  00000000  00000000  00000cb2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a23  00000000  00000000  0000102c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000003ff  00000000  00000000  00001a4f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000ad4  00000000  00000000  00001e4e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001b0  00000000  00000000  00002924  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000004aa  00000000  00000000  00002ad4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000300  00000000  00000000  00002f7e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  0000327e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   8:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  10:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  14:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  18:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  1c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  20:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  24:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  28:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  2c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  30:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  34:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  38:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  3c:	0c 94 21 02 	jmp	0x442	; 0x442 <__vector_15>
+  40:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  44:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  48:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  4c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  50:	0c 94 63 01 	jmp	0x2c6	; 0x2c6 <__vector_20>
+  54:	0c 94 23 01 	jmp	0x246	; 0x246 <__vector_21>
+  58:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  5c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  60:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  64:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  68:	0c 94 47 05 	jmp	0xa8e	; 0xa8e <__vector_26>
+  6c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  70:	0c 94 d0 01 	jmp	0x3a0	; 0x3a0 <__vector_28>
+  74:	0c 94 90 01 	jmp	0x320	; 0x320 <__vector_29>
+  78:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d8 e0       	ldi	r29, 0x08	; 8
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_copy_data>:
+  88:	11 e0       	ldi	r17, 0x01	; 1
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	e4 ea       	ldi	r30, 0xA4	; 164
+  90:	fb e0       	ldi	r31, 0x0B	; 11
+  92:	02 c0       	rjmp	.+4      	; 0x98 <.do_copy_data_start>
+
+00000094 <.do_copy_data_loop>:
+  94:	05 90       	lpm	r0, Z+
+  96:	0d 92       	st	X+, r0
+
+00000098 <.do_copy_data_start>:
+  98:	aa 33       	cpi	r26, 0x3A	; 58
+  9a:	b1 07       	cpc	r27, r17
+  9c:	d9 f7       	brne	.-10     	; 0x94 <.do_copy_data_loop>
+
+0000009e <__do_clear_bss>:
+  9e:	15 e0       	ldi	r17, 0x05	; 5
+  a0:	aa e3       	ldi	r26, 0x3A	; 58
+  a2:	b1 e0       	ldi	r27, 0x01	; 1
+  a4:	01 c0       	rjmp	.+2      	; 0xa8 <.do_clear_bss_start>
+
+000000a6 <.do_clear_bss_loop>:
+  a6:	1d 92       	st	X+, r1
+
+000000a8 <.do_clear_bss_start>:
+  a8:	ab 36       	cpi	r26, 0x6B	; 107
+  aa:	b1 07       	cpc	r27, r17
+  ac:	e1 f7       	brne	.-8      	; 0xa6 <.do_clear_bss_loop>
+  ae:	0e 94 59 02 	call	0x4b2	; 0x4b2 <main>
+  b2:	0c 94 d0 05 	jmp	0xba0	; 0xba0 <_exit>
+
+000000b6 <__bad_interrupt>:
+  b6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ba <mrbusCRC16Update>:
+	uint8_t t;
+	uint8_t i = 0;
+
+	uint8_t W;
+	uint8_t crc16_high = (crc >> 8) & 0xFF;
+	uint8_t crc16_low = crc & 0xFF;
+  ba:	48 2f       	mov	r20, r24
+  bc:	20 e0       	ldi	r18, 0x00	; 0
+
+	while (i < 2)
+	{
+		if (i)
+  be:	22 23       	and	r18, r18
+  c0:	39 f0       	breq	.+14     	; 0xd0 <mrbusCRC16Update+0x16>
+		{
+			W = ((crc16_high << 4) & 0xF0) | ((crc16_high >> 4) & 0x0F);
+  c2:	89 2f       	mov	r24, r25
+  c4:	82 95       	swap	r24
+  c6:	8f 70       	andi	r24, 0x0F	; 15
+			W = W ^ a;
+  c8:	e6 2f       	mov	r30, r22
+  ca:	ef 70       	andi	r30, 0x0F	; 15
+			W = W & 0x0F;
+  cc:	e8 27       	eor	r30, r24
+  ce:	04 c0       	rjmp	.+8      	; 0xd8 <mrbusCRC16Update+0x1e>
+			t = W;
+		}
+		else
+		{
+			W = crc16_high;
+			W = W ^ a;
+  d0:	e9 2f       	mov	r30, r25
+  d2:	e6 27       	eor	r30, r22
+			W = W & 0xF0;
+			t = W;
+			t = ((t << 4) & 0xF0) | ((t >> 4) & 0x0F);
+  d4:	e2 95       	swap	r30
+  d6:	ef 70       	andi	r30, 0x0F	; 15
+		}
+
+		crc16_high = crc16_high << 4;
+  d8:	92 95       	swap	r25
+  da:	90 7f       	andi	r25, 0xF0	; 240
+		crc16_high |= (crc16_low >> 4);
+  dc:	84 2f       	mov	r24, r20
+  de:	82 95       	swap	r24
+  e0:	8f 70       	andi	r24, 0x0F	; 15
+  e2:	98 2b       	or	r25, r24
+		crc16_low = crc16_low << 4;
+  e4:	42 95       	swap	r20
+  e6:	40 7f       	andi	r20, 0xF0	; 240
+
+		crc16_high = crc16_high ^ MRBus_CRC16_HighTable[t];
+  e8:	f0 e0       	ldi	r31, 0x00	; 0
+  ea:	df 01       	movw	r26, r30
+  ec:	a8 5e       	subi	r26, 0xE8	; 232
+  ee:	be 4f       	sbci	r27, 0xFE	; 254
+  f0:	8c 91       	ld	r24, X
+  f2:	98 27       	eor	r25, r24
+		crc16_low = crc16_low ^ MRBus_CRC16_LowTable[t];
+  f4:	e8 5d       	subi	r30, 0xD8	; 216
+  f6:	fe 4f       	sbci	r31, 0xFE	; 254
+  f8:	80 81       	ld	r24, Z
+  fa:	48 27       	eor	r20, r24
+
+		i++;
+  fc:	2f 5f       	subi	r18, 0xFF	; 255
+
+	uint8_t W;
+	uint8_t crc16_high = (crc >> 8) & 0xFF;
+	uint8_t crc16_low = crc & 0xFF;
+
+	while (i < 2)
+  fe:	22 30       	cpi	r18, 0x02	; 2
+ 100:	f1 f6       	brne	.-68     	; 0xbe <mrbusCRC16Update+0x4>
+ 102:	39 2f       	mov	r19, r25
+ 104:	20 e0       	ldi	r18, 0x00	; 0
+ 106:	24 0f       	add	r18, r20
+ 108:	31 1d       	adc	r19, r1
+
+		i++;
+	}
+
+	return ( ((crc16_high << 8) & 0xFF00) + crc16_low );
+}
+ 10a:	c9 01       	movw	r24, r18
+ 10c:	08 95       	ret
+
+0000010e <BlockRingBufferInitialize>:
+	volatile uint8_t bufferState;
+} BlockRingBuffer;
+
+
+void BlockRingBufferInitialize(BlockRingBuffer* r)
+{
+ 10e:	fc 01       	movw	r30, r24
+	r->headIdx = r->tailIdx = 0;
+ 110:	11 82       	std	Z+1, r1	; 0x01
+ 112:	81 81       	ldd	r24, Z+1	; 0x01
+ 114:	80 83       	st	Z, r24
+	r->bufferState = 0;
+ 116:	e4 50       	subi	r30, 0x04	; 4
+ 118:	ff 4f       	sbci	r31, 0xFF	; 255
+ 11a:	10 82       	st	Z, r1
+}
+ 11c:	08 95       	ret
+
+0000011e <BlockRingBufferDepth>:
+    }
+}
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+ 11e:	fc 01       	movw	r30, r24
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 120:	90 81       	ld	r25, Z
+ 122:	81 81       	ldd	r24, Z+1	; 0x01
+ 124:	98 17       	cp	r25, r24
+ 126:	18 f0       	brcs	.+6      	; 0x12e <BlockRingBufferDepth+0x10>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 128:	20 81       	ld	r18, Z
+ 12a:	81 81       	ldd	r24, Z+1	; 0x01
+ 12c:	03 c0       	rjmp	.+6      	; 0x134 <BlockRingBufferDepth+0x16>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 12e:	20 81       	ld	r18, Z
+ 130:	81 81       	ldd	r24, Z+1	; 0x01
+ 132:	26 50       	subi	r18, 0x06	; 6
+ 134:	28 1b       	sub	r18, r24
+	}
+}
+ 136:	82 2f       	mov	r24, r18
+ 138:	08 95       	ret
+
+0000013a <BlockRingBufferSpace>:
+
+uint8_t BlockRingBufferSpace(BlockRingBuffer *r)
+{
+ 13a:	fc 01       	movw	r30, r24
+    uint8_t tmp;
+    
+    if (r->headIdx >= r->tailIdx)
+ 13c:	90 81       	ld	r25, Z
+ 13e:	81 81       	ldd	r24, Z+1	; 0x01
+ 140:	98 17       	cp	r25, r24
+ 142:	18 f0       	brcs	.+6      	; 0x14a <BlockRingBufferSpace+0x10>
+	{
+        // buffer used
+	    tmp = r->headIdx - r->tailIdx;
+ 144:	20 81       	ld	r18, Z
+ 146:	81 81       	ldd	r24, Z+1	; 0x01
+ 148:	03 c0       	rjmp	.+6      	; 0x150 <BlockRingBufferSpace+0x16>
+	} else {
+	    // buffer used
+	    tmp = BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx);
+ 14a:	20 81       	ld	r18, Z
+ 14c:	81 81       	ldd	r24, Z+1	; 0x01
+ 14e:	26 50       	subi	r18, 0x06	; 6
+ 150:	28 1b       	sub	r18, r24
+	
+	// free space
+	tmp = BLOCK_RING_BUFFER_SZ - tmp;
+	
+	return (tmp);
+}
+ 152:	8a ef       	ldi	r24, 0xFA	; 250
+ 154:	82 1b       	sub	r24, r18
+ 156:	08 95       	ret
+
+00000158 <BlockRingBufferPush>:
+
+    
+void BlockRingBufferPush(BlockRingBuffer* r, uint8_t data)
+{
+ 158:	dc 01       	movw	r26, r24
+
+uint8_t BlockRingBufferSpace(BlockRingBuffer *r)
+{
+    uint8_t tmp;
+    
+    if (r->headIdx >= r->tailIdx)
+ 15a:	9c 91       	ld	r25, X
+ 15c:	11 96       	adiw	r26, 0x01	; 1
+ 15e:	8c 91       	ld	r24, X
+ 160:	11 97       	sbiw	r26, 0x01	; 1
+ 162:	98 17       	cp	r25, r24
+ 164:	28 f0       	brcs	.+10     	; 0x170 <BlockRingBufferPush+0x18>
+	{
+        // buffer used
+	    tmp = r->headIdx - r->tailIdx;
+ 166:	9c 91       	ld	r25, X
+ 168:	11 96       	adiw	r26, 0x01	; 1
+ 16a:	8c 91       	ld	r24, X
+ 16c:	11 97       	sbiw	r26, 0x01	; 1
+ 16e:	05 c0       	rjmp	.+10     	; 0x17a <BlockRingBufferPush+0x22>
+	} else {
+	    // buffer used
+	    tmp = BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx);
+ 170:	9c 91       	ld	r25, X
+ 172:	11 96       	adiw	r26, 0x01	; 1
+ 174:	8c 91       	ld	r24, X
+ 176:	11 97       	sbiw	r26, 0x01	; 1
+ 178:	96 50       	subi	r25, 0x06	; 6
+ 17a:	98 1b       	sub	r25, r24
+
+    
+void BlockRingBufferPush(BlockRingBuffer* r, uint8_t data)
+{
+	
+	if (BlockRingBufferSpace(r) == BUFFER_NEARLY_FULL)
+ 17c:	98 3f       	cpi	r25, 0xF8	; 248
+ 17e:	39 f4       	brne	.+14     	; 0x18e <BlockRingBufferPush+0x36>
+	{
+        r->bufferData[r->headIdx] = END;
+ 180:	8c 91       	ld	r24, X
+ 182:	fd 01       	movw	r30, r26
+ 184:	e8 0f       	add	r30, r24
+ 186:	f1 1d       	adc	r31, r1
+ 188:	80 ec       	ldi	r24, 0xC0	; 192
+ 18a:	82 83       	std	Z+2, r24	; 0x02
+ 18c:	1a c0       	rjmp	.+52     	; 0x1c2 <BlockRingBufferPush+0x6a>
+
+uint8_t BlockRingBufferSpace(BlockRingBuffer *r)
+{
+    uint8_t tmp;
+    
+    if (r->headIdx >= r->tailIdx)
+ 18e:	9c 91       	ld	r25, X
+ 190:	11 96       	adiw	r26, 0x01	; 1
+ 192:	8c 91       	ld	r24, X
+ 194:	11 97       	sbiw	r26, 0x01	; 1
+ 196:	98 17       	cp	r25, r24
+ 198:	28 f0       	brcs	.+10     	; 0x1a4 <BlockRingBufferPush+0x4c>
+	{
+        // buffer used
+	    tmp = r->headIdx - r->tailIdx;
+ 19a:	9c 91       	ld	r25, X
+ 19c:	11 96       	adiw	r26, 0x01	; 1
+ 19e:	8c 91       	ld	r24, X
+ 1a0:	11 97       	sbiw	r26, 0x01	; 1
+ 1a2:	05 c0       	rjmp	.+10     	; 0x1ae <BlockRingBufferPush+0x56>
+	} else {
+	    // buffer used
+	    tmp = BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx);
+ 1a4:	9c 91       	ld	r25, X
+ 1a6:	11 96       	adiw	r26, 0x01	; 1
+ 1a8:	8c 91       	ld	r24, X
+ 1aa:	11 97       	sbiw	r26, 0x01	; 1
+ 1ac:	96 50       	subi	r25, 0x06	; 6
+ 1ae:	98 1b       	sub	r25, r24
+	
+	if (BlockRingBufferSpace(r) == BUFFER_NEARLY_FULL)
+	{
+        r->bufferData[r->headIdx] = END;
+        r->bufferState += 1;
+	} else if (BlockRingBufferSpace(r) == BUFFER_FULL) {
+ 1b0:	99 3f       	cpi	r25, 0xF9	; 249
+ 1b2:	b9 f0       	breq	.+46     	; 0x1e2 <BlockRingBufferPush+0x8a>
+	    return;
+	} else {
+	    r->bufferData[r->headIdx] = data;
+ 1b4:	8c 91       	ld	r24, X
+ 1b6:	fd 01       	movw	r30, r26
+ 1b8:	e8 0f       	add	r30, r24
+ 1ba:	f1 1d       	adc	r31, r1
+ 1bc:	62 83       	std	Z+2, r22	; 0x02
+	    if (data == END) r->bufferState += 1;
+ 1be:	60 3c       	cpi	r22, 0xC0	; 192
+ 1c0:	31 f4       	brne	.+12     	; 0x1ce <BlockRingBufferPush+0x76>
+ 1c2:	fd 01       	movw	r30, r26
+ 1c4:	e4 50       	subi	r30, 0x04	; 4
+ 1c6:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1c8:	80 81       	ld	r24, Z
+ 1ca:	8f 5f       	subi	r24, 0xFF	; 255
+ 1cc:	80 83       	st	Z, r24
+	}
+
+    ROLLOVER( r->headIdx, BLOCK_RING_BUFFER_SZ);
+ 1ce:	8c 91       	ld	r24, X
+ 1d0:	8f 5f       	subi	r24, 0xFF	; 255
+ 1d2:	8c 93       	st	X, r24
+ 1d4:	8c 91       	ld	r24, X
+ 1d6:	8a 3f       	cpi	r24, 0xFA	; 250
+ 1d8:	10 f0       	brcs	.+4      	; 0x1de <BlockRingBufferPush+0x86>
+ 1da:	80 e0       	ldi	r24, 0x00	; 0
+ 1dc:	01 c0       	rjmp	.+2      	; 0x1e0 <BlockRingBufferPush+0x88>
+ 1de:	8c 91       	ld	r24, X
+ 1e0:	8c 93       	st	X, r24
+ 1e2:	08 95       	ret
+
+000001e4 <BlockRingBufferPop>:
+	*/
+
+}
+
+uint8_t BlockRingBufferPop(BlockRingBuffer* r)
+{
+ 1e4:	dc 01       	movw	r26, r24
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 1e6:	9c 91       	ld	r25, X
+ 1e8:	11 96       	adiw	r26, 0x01	; 1
+ 1ea:	8c 91       	ld	r24, X
+ 1ec:	11 97       	sbiw	r26, 0x01	; 1
+ 1ee:	98 17       	cp	r25, r24
+ 1f0:	28 f0       	brcs	.+10     	; 0x1fc <BlockRingBufferPop+0x18>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 1f2:	9c 91       	ld	r25, X
+ 1f4:	11 96       	adiw	r26, 0x01	; 1
+ 1f6:	8c 91       	ld	r24, X
+ 1f8:	11 97       	sbiw	r26, 0x01	; 1
+ 1fa:	05 c0       	rjmp	.+10     	; 0x206 <BlockRingBufferPop+0x22>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 1fc:	9c 91       	ld	r25, X
+ 1fe:	11 96       	adiw	r26, 0x01	; 1
+ 200:	8c 91       	ld	r24, X
+ 202:	11 97       	sbiw	r26, 0x01	; 1
+ 204:	96 50       	subi	r25, 0x06	; 6
+ 206:	98 1b       	sub	r25, r24
+
+uint8_t BlockRingBufferPop(BlockRingBuffer* r)
+{
+	uint8_t data;
+	
+	if (BlockRingBufferDepth(r))
+ 208:	11 f4       	brne	.+4      	; 0x20e <BlockRingBufferPop+0x2a>
+ 20a:	90 ec       	ldi	r25, 0xC0	; 192
+ 20c:	1a c0       	rjmp	.+52     	; 0x242 <BlockRingBufferPop+0x5e>
+	{
+        data = r->bufferData[r->tailIdx];
+ 20e:	11 96       	adiw	r26, 0x01	; 1
+ 210:	8c 91       	ld	r24, X
+ 212:	11 97       	sbiw	r26, 0x01	; 1
+ 214:	fd 01       	movw	r30, r26
+ 216:	e8 0f       	add	r30, r24
+ 218:	f1 1d       	adc	r31, r1
+ 21a:	92 81       	ldd	r25, Z+2	; 0x02
+        ROLLOVER( r->tailIdx, BLOCK_RING_BUFFER_SZ);
+ 21c:	11 96       	adiw	r26, 0x01	; 1
+ 21e:	8c 91       	ld	r24, X
+ 220:	11 97       	sbiw	r26, 0x01	; 1
+ 222:	8f 5f       	subi	r24, 0xFF	; 255
+ 224:	11 96       	adiw	r26, 0x01	; 1
+ 226:	8c 93       	st	X, r24
+ 228:	11 97       	sbiw	r26, 0x01	; 1
+ 22a:	11 96       	adiw	r26, 0x01	; 1
+ 22c:	8c 91       	ld	r24, X
+ 22e:	11 97       	sbiw	r26, 0x01	; 1
+ 230:	8a 3f       	cpi	r24, 0xFA	; 250
+ 232:	10 f0       	brcs	.+4      	; 0x238 <BlockRingBufferPop+0x54>
+ 234:	80 e0       	ldi	r24, 0x00	; 0
+ 236:	03 c0       	rjmp	.+6      	; 0x23e <BlockRingBufferPop+0x5a>
+ 238:	11 96       	adiw	r26, 0x01	; 1
+ 23a:	8c 91       	ld	r24, X
+ 23c:	11 97       	sbiw	r26, 0x01	; 1
+ 23e:	11 96       	adiw	r26, 0x01	; 1
+ 240:	8c 93       	st	X, r24
+        return(data);
+	} else {
+        return(END);       // if there wasn't any data, this routine shouldn't have been called; if it happened, the safest thing we can do is to return an END
+	}
+}
+ 242:	89 2f       	mov	r24, r25
+ 244:	08 95       	ret
+
+00000246 <__vector_21>:
+    }
+} */
+
+
+ISR(USART0_UDRE_vect)
+{
+ 246:	1f 92       	push	r1
+ 248:	0f 92       	push	r0
+ 24a:	0f b6       	in	r0, 0x3f	; 63
+ 24c:	0f 92       	push	r0
+ 24e:	11 24       	eor	r1, r1
+ 250:	2f 93       	push	r18
+ 252:	3f 93       	push	r19
+ 254:	4f 93       	push	r20
+ 256:	5f 93       	push	r21
+ 258:	6f 93       	push	r22
+ 25a:	7f 93       	push	r23
+ 25c:	8f 93       	push	r24
+ 25e:	9f 93       	push	r25
+ 260:	af 93       	push	r26
+ 262:	bf 93       	push	r27
+ 264:	ef 93       	push	r30
+ 266:	ff 93       	push	r31
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 268:	90 91 77 01 	lds	r25, 0x0177
+ 26c:	80 91 78 01 	lds	r24, 0x0178
+ 270:	98 17       	cp	r25, r24
+ 272:	28 f0       	brcs	.+10     	; 0x27e <__vector_21+0x38>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 274:	90 91 77 01 	lds	r25, 0x0177
+ 278:	80 91 78 01 	lds	r24, 0x0178
+ 27c:	05 c0       	rjmp	.+10     	; 0x288 <__vector_21+0x42>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 27e:	90 91 77 01 	lds	r25, 0x0177
+ 282:	80 91 78 01 	lds	r24, 0x0178
+ 286:	96 50       	subi	r25, 0x06	; 6
+ 288:	98 1b       	sub	r25, r24
+	if (BlockRingBufferDepth(&(BlockTXBuffer[0])))
+ 28a:	39 f0       	breq	.+14     	; 0x29a <__vector_21+0x54>
+		UDR0 = BlockRingBufferPop(&(BlockTXBuffer[0]));
+ 28c:	87 e7       	ldi	r24, 0x77	; 119
+ 28e:	91 e0       	ldi	r25, 0x01	; 1
+ 290:	0e 94 f2 00 	call	0x1e4	; 0x1e4 <BlockRingBufferPop>
+ 294:	80 93 c6 00 	sts	0x00C6, r24
+ 298:	05 c0       	rjmp	.+10     	; 0x2a4 <__vector_21+0x5e>
+	else
+		UCSR0B &= ~_BV(UDRIE0);
+ 29a:	80 91 c1 00 	lds	r24, 0x00C1
+ 29e:	8f 7d       	andi	r24, 0xDF	; 223
+ 2a0:	80 93 c1 00 	sts	0x00C1, r24
+}
+ 2a4:	ff 91       	pop	r31
+ 2a6:	ef 91       	pop	r30
+ 2a8:	bf 91       	pop	r27
+ 2aa:	af 91       	pop	r26
+ 2ac:	9f 91       	pop	r25
+ 2ae:	8f 91       	pop	r24
+ 2b0:	7f 91       	pop	r23
+ 2b2:	6f 91       	pop	r22
+ 2b4:	5f 91       	pop	r21
+ 2b6:	4f 91       	pop	r20
+ 2b8:	3f 91       	pop	r19
+ 2ba:	2f 91       	pop	r18
+ 2bc:	0f 90       	pop	r0
+ 2be:	0f be       	out	0x3f, r0	; 63
+ 2c0:	0f 90       	pop	r0
+ 2c2:	1f 90       	pop	r1
+ 2c4:	18 95       	reti
+
+000002c6 <__vector_20>:
+
+ISR(USART0_RX_vect)
+{
+ 2c6:	1f 92       	push	r1
+ 2c8:	0f 92       	push	r0
+ 2ca:	0f b6       	in	r0, 0x3f	; 63
+ 2cc:	0f 92       	push	r0
+ 2ce:	11 24       	eor	r1, r1
+ 2d0:	2f 93       	push	r18
+ 2d2:	3f 93       	push	r19
+ 2d4:	4f 93       	push	r20
+ 2d6:	5f 93       	push	r21
+ 2d8:	6f 93       	push	r22
+ 2da:	7f 93       	push	r23
+ 2dc:	8f 93       	push	r24
+ 2de:	9f 93       	push	r25
+ 2e0:	af 93       	push	r26
+ 2e2:	bf 93       	push	r27
+ 2e4:	ef 93       	push	r30
+ 2e6:	ff 93       	push	r31
+	uint8_t status = UCSR0A, data = UDR0;
+ 2e8:	80 91 c0 00 	lds	r24, 0x00C0
+ 2ec:	60 91 c6 00 	lds	r22, 0x00C6
+
+	// Framing errors and other crap.  Throw it out
+	if (status & (_BV(FE0) | _BV(DOR0) | _BV(UPE0) ))
+ 2f0:	8c 71       	andi	r24, 0x1C	; 28
+ 2f2:	09 f0       	breq	.+2      	; 0x2f6 <__vector_20+0x30>
+ 2f4:	60 ec       	ldi	r22, 0xC0	; 192
+	{
+		data = END;
+	}
+	
+	//if (data == END) BlockRXBuffer[0].bufferState += 1;
+	BlockRingBufferPush(&(BlockRXBuffer[0]), data);
+ 2f6:	81 e7       	ldi	r24, 0x71	; 113
+ 2f8:	93 e0       	ldi	r25, 0x03	; 3
+ 2fa:	0e 94 ac 00 	call	0x158	; 0x158 <BlockRingBufferPush>
+}
+ 2fe:	ff 91       	pop	r31
+ 300:	ef 91       	pop	r30
+ 302:	bf 91       	pop	r27
+ 304:	af 91       	pop	r26
+ 306:	9f 91       	pop	r25
+ 308:	8f 91       	pop	r24
+ 30a:	7f 91       	pop	r23
+ 30c:	6f 91       	pop	r22
+ 30e:	5f 91       	pop	r21
+ 310:	4f 91       	pop	r20
+ 312:	3f 91       	pop	r19
+ 314:	2f 91       	pop	r18
+ 316:	0f 90       	pop	r0
+ 318:	0f be       	out	0x3f, r0	; 63
+ 31a:	0f 90       	pop	r0
+ 31c:	1f 90       	pop	r1
+ 31e:	18 95       	reti
+
+00000320 <__vector_29>:
+
+#if (N_PHYSICAL_BLOCK_INTERFACES >= 2)
+ISR(USART1_UDRE_vect)
+{
+ 320:	1f 92       	push	r1
+ 322:	0f 92       	push	r0
+ 324:	0f b6       	in	r0, 0x3f	; 63
+ 326:	0f 92       	push	r0
+ 328:	11 24       	eor	r1, r1
+ 32a:	2f 93       	push	r18
+ 32c:	3f 93       	push	r19
+ 32e:	4f 93       	push	r20
+ 330:	5f 93       	push	r21
+ 332:	6f 93       	push	r22
+ 334:	7f 93       	push	r23
+ 336:	8f 93       	push	r24
+ 338:	9f 93       	push	r25
+ 33a:	af 93       	push	r26
+ 33c:	bf 93       	push	r27
+ 33e:	ef 93       	push	r30
+ 340:	ff 93       	push	r31
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 342:	90 91 74 02 	lds	r25, 0x0274
+ 346:	80 91 75 02 	lds	r24, 0x0275
+ 34a:	98 17       	cp	r25, r24
+ 34c:	28 f0       	brcs	.+10     	; 0x358 <__vector_29+0x38>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 34e:	90 91 74 02 	lds	r25, 0x0274
+ 352:	80 91 75 02 	lds	r24, 0x0275
+ 356:	05 c0       	rjmp	.+10     	; 0x362 <__vector_29+0x42>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 358:	90 91 74 02 	lds	r25, 0x0274
+ 35c:	80 91 75 02 	lds	r24, 0x0275
+ 360:	96 50       	subi	r25, 0x06	; 6
+ 362:	98 1b       	sub	r25, r24
+	if (BlockRingBufferDepth(&(BlockTXBuffer[1])))
+ 364:	39 f0       	breq	.+14     	; 0x374 <__vector_29+0x54>
+		UDR1 = BlockRingBufferPop(&(BlockTXBuffer[1]));
+ 366:	84 e7       	ldi	r24, 0x74	; 116
+ 368:	92 e0       	ldi	r25, 0x02	; 2
+ 36a:	0e 94 f2 00 	call	0x1e4	; 0x1e4 <BlockRingBufferPop>
+ 36e:	80 93 ce 00 	sts	0x00CE, r24
+ 372:	05 c0       	rjmp	.+10     	; 0x37e <__vector_29+0x5e>
+	else
+		UCSR1B &= ~_BV(UDRIE1);
+ 374:	80 91 c9 00 	lds	r24, 0x00C9
+ 378:	8f 7d       	andi	r24, 0xDF	; 223
+ 37a:	80 93 c9 00 	sts	0x00C9, r24
+}
+ 37e:	ff 91       	pop	r31
+ 380:	ef 91       	pop	r30
+ 382:	bf 91       	pop	r27
+ 384:	af 91       	pop	r26
+ 386:	9f 91       	pop	r25
+ 388:	8f 91       	pop	r24
+ 38a:	7f 91       	pop	r23
+ 38c:	6f 91       	pop	r22
+ 38e:	5f 91       	pop	r21
+ 390:	4f 91       	pop	r20
+ 392:	3f 91       	pop	r19
+ 394:	2f 91       	pop	r18
+ 396:	0f 90       	pop	r0
+ 398:	0f be       	out	0x3f, r0	; 63
+ 39a:	0f 90       	pop	r0
+ 39c:	1f 90       	pop	r1
+ 39e:	18 95       	reti
+
+000003a0 <__vector_28>:
+
+
+ISR(USART1_RX_vect)
+{
+ 3a0:	1f 92       	push	r1
+ 3a2:	0f 92       	push	r0
+ 3a4:	0f b6       	in	r0, 0x3f	; 63
+ 3a6:	0f 92       	push	r0
+ 3a8:	11 24       	eor	r1, r1
+ 3aa:	2f 93       	push	r18
+ 3ac:	3f 93       	push	r19
+ 3ae:	4f 93       	push	r20
+ 3b0:	5f 93       	push	r21
+ 3b2:	6f 93       	push	r22
+ 3b4:	7f 93       	push	r23
+ 3b6:	8f 93       	push	r24
+ 3b8:	9f 93       	push	r25
+ 3ba:	af 93       	push	r26
+ 3bc:	bf 93       	push	r27
+ 3be:	ef 93       	push	r30
+ 3c0:	ff 93       	push	r31
+	uint8_t status = UCSR1A, data = UDR1;
+ 3c2:	80 91 c8 00 	lds	r24, 0x00C8
+ 3c6:	60 91 ce 00 	lds	r22, 0x00CE
+
+	// Framing errors and other crap.  Throw it out
+	if (status & (_BV(FE1) | _BV(DOR1) | _BV(UPE1) ))
+ 3ca:	8c 71       	andi	r24, 0x1C	; 28
+ 3cc:	09 f0       	breq	.+2      	; 0x3d0 <__vector_28+0x30>
+ 3ce:	60 ec       	ldi	r22, 0xC0	; 192
+	{
+	    data = END;
+	}
+	
+	//if (data == END) BlockRXBuffer[1].bufferState += 1;
+	BlockRingBufferPush(&(BlockRXBuffer[1]), data);
+ 3d0:	8e e6       	ldi	r24, 0x6E	; 110
+ 3d2:	94 e0       	ldi	r25, 0x04	; 4
+ 3d4:	0e 94 ac 00 	call	0x158	; 0x158 <BlockRingBufferPush>
+}
+ 3d8:	ff 91       	pop	r31
+ 3da:	ef 91       	pop	r30
+ 3dc:	bf 91       	pop	r27
+ 3de:	af 91       	pop	r26
+ 3e0:	9f 91       	pop	r25
+ 3e2:	8f 91       	pop	r24
+ 3e4:	7f 91       	pop	r23
+ 3e6:	6f 91       	pop	r22
+ 3e8:	5f 91       	pop	r21
+ 3ea:	4f 91       	pop	r20
+ 3ec:	3f 91       	pop	r19
+ 3ee:	2f 91       	pop	r18
+ 3f0:	0f 90       	pop	r0
+ 3f2:	0f be       	out	0x3f, r0	; 63
+ 3f4:	0f 90       	pop	r0
+ 3f6:	1f 90       	pop	r1
+ 3f8:	18 95       	reti
+
+000003fa <BlockUartInitialize>:
+#endif
+
+void BlockUartInitialize(void)
+{
+	//UCSR0A
+	UBRR0 = UBRRn_BAUD_DIVISOR(UART_BLOCK_BAUD);
+ 3fa:	8a e2       	ldi	r24, 0x2A	; 42
+ 3fc:	90 e0       	ldi	r25, 0x00	; 0
+ 3fe:	90 93 c5 00 	sts	0x00C5, r25
+ 402:	80 93 c4 00 	sts	0x00C4, r24
+//	UCSR0A = _BV(U2X0);
+    UCSR0C = _BV(UCSZ01) | _BV(UCSZ00);
+ 406:	36 e0       	ldi	r19, 0x06	; 6
+ 408:	30 93 c2 00 	sts	0x00C2, r19
+	UCSR0B = _BV(RXEN0) | _BV(TXEN0) | _BV(RXCIE0);
+ 40c:	28 e9       	ldi	r18, 0x98	; 152
+ 40e:	20 93 c1 00 	sts	0x00C1, r18
+	
+	
+#if (N_PHYSICAL_BLOCK_INTERFACES >= 2)
+		//UCSR1A
+	UBRR1 = UBRRn_BAUD_DIVISOR(UART_BLOCK_BAUD);
+ 412:	90 93 cd 00 	sts	0x00CD, r25
+ 416:	80 93 cc 00 	sts	0x00CC, r24
+//	UCSR1A = _BV(U2X1);
+	UCSR1C = _BV(UCSZ11) | _BV(UCSZ10);
+ 41a:	30 93 ca 00 	sts	0x00CA, r19
+	UCSR1B = _BV(RXEN1) | _BV(TXEN1) | _BV(RXCIE1);
+ 41e:	20 93 c9 00 	sts	0x00C9, r18
+	
+#endif
+
+}
+ 422:	08 95       	ret
+
+00000424 <initialize100HzTimer>:
+uint8_t restart = 0;
+
+void initialize100HzTimer(void)
+{
+	// Set up timer 1 for 100Hz interrupts
+	TCCR1A = 0;
+ 424:	10 92 80 00 	sts	0x0080, r1
+	TCCR1B = _BV(CS11) | _BV(CS10);	// clk/64
+ 428:	83 e0       	ldi	r24, 0x03	; 3
+ 42a:	80 93 81 00 	sts	0x0081, r24
+	TCCR1C = 0;
+ 42e:	10 92 82 00 	sts	0x0082, r1
+	TIMSK1 |= _BV(TOIE1);
+ 432:	ef e6       	ldi	r30, 0x6F	; 111
+ 434:	f0 e0       	ldi	r31, 0x00	; 0
+ 436:	80 81       	ld	r24, Z
+ 438:	81 60       	ori	r24, 0x01	; 1
+ 43a:	80 83       	st	Z, r24
+	ticks = 0;
+ 43c:	10 92 75 01 	sts	0x0175, r1
+}
+ 440:	08 95       	ret
+
+00000442 <__vector_15>:
+
+ISR(TIMER1_OVF_vect)
+{
+ 442:	1f 92       	push	r1
+ 444:	0f 92       	push	r0
+ 446:	0f b6       	in	r0, 0x3f	; 63
+ 448:	0f 92       	push	r0
+ 44a:	11 24       	eor	r1, r1
+ 44c:	8f 93       	push	r24
+ 44e:	9f 93       	push	r25
+	
+	TCNT1 += TCNT1_RELOAD_VAL;
+ 450:	80 91 84 00 	lds	r24, 0x0084
+ 454:	90 91 85 00 	lds	r25, 0x0085
+ 458:	86 53       	subi	r24, 0x36	; 54
+ 45a:	9c 40       	sbci	r25, 0x0C	; 12
+ 45c:	90 93 85 00 	sts	0x0085, r25
+ 460:	80 93 84 00 	sts	0x0084, r24
+	
+	++ticks;
+ 464:	80 91 75 01 	lds	r24, 0x0175
+ 468:	8f 5f       	subi	r24, 0xFF	; 255
+ 46a:	80 93 75 01 	sts	0x0175, r24
+	if (ticks >= 25)
+ 46e:	80 91 75 01 	lds	r24, 0x0175
+ 472:	89 31       	cpi	r24, 0x19	; 25
+ 474:	38 f0       	brcs	.+14     	; 0x484 <__vector_15+0x42>
+	{
+	   ticks = 0;
+ 476:	10 92 75 01 	sts	0x0175, r1
+	   changed |= QUARTER_SEC;
+ 47a:	80 91 3a 01 	lds	r24, 0x013A
+ 47e:	80 68       	ori	r24, 0x80	; 128
+ 480:	80 93 3a 01 	sts	0x013A, r24
+	}
+}
+ 484:	9f 91       	pop	r25
+ 486:	8f 91       	pop	r24
+ 488:	0f 90       	pop	r0
+ 48a:	0f be       	out	0x3f, r0	; 63
+ 48c:	0f 90       	pop	r0
+ 48e:	1f 90       	pop	r1
+ 490:	18 95       	reti
+
+00000492 <init>:
+    
+	// prescaler is 8, timer counts 1/2 microseconds
+//	TCCR0 = _BV(CS01);
+
+	
+	TWI_DDR &= ~TWI_INT;
+ 492:	3a 98       	cbi	0x07, 2	; 7
+	TWI_PORT &= ~(TWI_SDA | TWI_SCL | TWI_INT); // disable pull-ups, set low
+ 494:	88 b1       	in	r24, 0x08	; 8
+ 496:	88 7f       	andi	r24, 0xF8	; 248
+ 498:	88 b9       	out	0x08, r24	; 8
+	
+ //   GIMSK = 0x00;
+	
+	ACSR = _BV(ACD);
+ 49a:	80 e8       	ldi	r24, 0x80	; 128
+ 49c:	80 bf       	out	0x30, r24	; 48
+	ADCSRA = 0;
+ 49e:	10 92 7a 00 	sts	0x007A, r1
+	
+	
+}
+ 4a2:	08 95       	ret
+
+000004a4 <TWI_Act_On_Failure_In_Last_Transmission>:
+	}
+}
+#endif
+
+unsigned char TWI_Act_On_Failure_In_Last_Transmission ( unsigned char TWIerrorMsg )
+{
+ 4a4:	1f 93       	push	r17
+ 4a6:	18 2f       	mov	r17, r24
+        if (!(eeprom_is_ready())) eeprom_busy_wait();
+        SlaveAddress = eeprom_read_byte((uint8_t *)EE_OWN_ADDRESS);
+        TWI_Slave_Initialise( (SlaveAddress << TWI_ADR_BITS) | (FALSE << TWI_GEN_BIT) );
+    }
+    */
+    TWI_Start_Transceiver();
+ 4a8:	0e 94 16 05 	call	0xa2c	; 0xa2c <TWI_Start_Transceiver>
+    
+ return TWIerrorMsg;
+}
+ 4ac:	81 2f       	mov	r24, r17
+ 4ae:	1f 91       	pop	r17
+ 4b0:	08 95       	ret
+
+000004b2 <main>:
+
+
+int main(void)
+{
+ 4b2:	2f 92       	push	r2
+ 4b4:	3f 92       	push	r3
+ 4b6:	4f 92       	push	r4
+ 4b8:	5f 92       	push	r5
+ 4ba:	6f 92       	push	r6
+ 4bc:	7f 92       	push	r7
+ 4be:	8f 92       	push	r8
+ 4c0:	9f 92       	push	r9
+ 4c2:	af 92       	push	r10
+ 4c4:	bf 92       	push	r11
+ 4c6:	cf 92       	push	r12
+ 4c8:	df 92       	push	r13
+ 4ca:	ef 92       	push	r14
+ 4cc:	ff 92       	push	r15
+ 4ce:	0f 93       	push	r16
+ 4d0:	1f 93       	push	r17
+ 4d2:	df 93       	push	r29
+ 4d4:	cf 93       	push	r28
+ 4d6:	cd b7       	in	r28, 0x3d	; 61
+ 4d8:	de b7       	in	r29, 0x3e	; 62
+ 4da:	e7 97       	sbiw	r28, 0x37	; 55
+ 4dc:	0f b6       	in	r0, 0x3f	; 63
+ 4de:	f8 94       	cli
+ 4e0:	de bf       	out	0x3e, r29	; 62
+ 4e2:	0f be       	out	0x3f, r0	; 63
+ 4e4:	cd bf       	out	0x3d, r28	; 61
+	
+
+	
+	
+	//start initialization
+	init();
+ 4e6:	0e 94 49 02 	call	0x492	; 0x492 <init>
+	
+	BlockUartInitialize();
+ 4ea:	0e 94 fd 01 	call	0x3fa	; 0x3fa <BlockUartInitialize>
+
+	// read the address of this node from EEPROM location
+	if (!(eeprom_is_ready())) eeprom_busy_wait();
+ 4ee:	f9 9b       	sbis	0x1f, 1	; 31
+ 4f0:	02 c0       	rjmp	.+4      	; 0x4f6 <main+0x44>
+ 4f2:	f9 99       	sbic	0x1f, 1	; 31
+ 4f4:	fe cf       	rjmp	.-4      	; 0x4f2 <main+0x40>
+    address = eeprom_read_byte((uint8_t *)EE_OWN_ADDRESS);
+ 4f6:	81 e0       	ldi	r24, 0x01	; 1
+ 4f8:	90 e0       	ldi	r25, 0x00	; 0
+ 4fa:	0e 94 c8 05 	call	0xb90	; 0xb90 <__eerd_byte_m324a>
+    
+    // Initialise TWI module for slave operation. Include address and/or enable General Call.
+    TWI_Slave_Initialise( (address << TWI_ADR_BITS) | (FALSE << TWI_GEN_BIT) );
+ 4fe:	88 0f       	add	r24, r24
+ 500:	0e 94 e1 04 	call	0x9c2	; 0x9c2 <TWI_Slave_Initialise>
+	
+
+	for (i = 0; i < N_PHYSICAL_BLOCK_INTERFACES; ++ i)
+		BlockActive[i] = FALSE;
+ 504:	19 82       	std	Y+1, r1	; 0x01
+ 506:	1a 82       	std	Y+2, r1	; 0x02
+
+
+	initialize100HzTimer();
+ 508:	0e 94 12 02 	call	0x424	; 0x424 <initialize100HzTimer>
+    
+    
+//    wdt_enable(WDTO_2S);
+    
+    
+	sei();
+ 50c:	78 94       	sei
+	
+	changed = 0;
+ 50e:	10 92 3a 01 	sts	0x013A, r1
+ 512:	6b e0       	ldi	r22, 0x0B	; 11
+ 514:	e6 2e       	mov	r14, r22
+ 516:	f1 2c       	mov	r15, r1
+ 518:	ec 0e       	add	r14, r28
+ 51a:	fd 1e       	adc	r15, r29
+                    TWI_Operation.Operation = NO_OP;
+                    if ((TWI_Operation.Suboperation == R_CMD_BLOCK_GET_DATA_LENGTH) &&
+                        (TWI_Operation.ReadLength > 0)) // we sent a length to the master, and now must prepare to send it
+                    {
+                        for (i = 0; i < TWI_Operation.ReadLength; ++i)
+                            messageBuf[i] = BlockRingBufferPop(&BlockRXBuffer[TWI_Operation.ElementNumber]);
+ 51c:	5d ef       	ldi	r21, 0xFD	; 253
+ 51e:	95 2e       	mov	r9, r21
+                        }
+                        break;
+                    
+                    case W_CMD_ACTIVATE_OUTPUTS:
+                        // master has sent the activation masks for the DDR
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+ 520:	4d e0       	ldi	r20, 0x0D	; 13
+ 522:	a4 2e       	mov	r10, r20
+ 524:	b1 2c       	mov	r11, r1
+ 526:	ac 0e       	add	r10, r28
+ 528:	bd 1e       	adc	r11, r29
+                            {
+                                // this is an output pin
+                                if (messageBuf[I2C_DATA-1+i] & (1<<j))
+                                {
+                                  
+                                    inputs_from_master[i] |= (1<<j);
+ 52a:	31 e0       	ldi	r19, 0x01	; 1
+ 52c:	c3 2e       	mov	r12, r19
+ 52e:	d1 2c       	mov	r13, r1
+                            sei();
+                        } else {
+                            TWI_Operation.ReadLength = 0;
+                            TWI_Operation.ElementNumber = 0;
+                        }
+						if (TWI_Operation.ReadLength > (I2C_MAX_MESSAGE_LENGTH)) TWI_Operation.ReadLength = I2C_MAX_MESSAGE_LENGTH;
+ 530:	28 e2       	ldi	r18, 0x28	; 40
+ 532:	82 2e       	mov	r8, r18
+                        TWI_Operation.ElementNumber = messageBuf[I2C_BLOCK_REMOTE_NUMBER -1];
+                        if (TWI_Operation.ElementNumber < N_PHYSICAL_BLOCK_INTERFACES)
+                        {
+                            for (i = I2C_BLOCK_REMOTE_NUMBER -1 +1; i < TWI_Operation.ReadLength; ++i)
+                                BlockRingBufferPush(&(BlockTXBuffer[TWI_Operation.ElementNumber]), messageBuf[i]);
+							BlockActive[TWI_Operation.ElementNumber] = TRUE;
+ 534:	1e 01       	movw	r2, r28
+ 536:	08 94       	sec
+ 538:	21 1c       	adc	r2, r1
+ 53a:	31 1c       	adc	r3, r1
+        if (!(eeprom_is_ready())) eeprom_busy_wait();
+        SlaveAddress = eeprom_read_byte((uint8_t *)EE_OWN_ADDRESS);
+        TWI_Slave_Initialise( (SlaveAddress << TWI_ADR_BITS) | (FALSE << TWI_GEN_BIT) );
+    }
+    */
+    TWI_Start_Transceiver();
+ 53c:	97 e0       	ldi	r25, 0x07	; 7
+ 53e:	69 2e       	mov	r6, r25
+ 540:	71 2c       	mov	r7, r1
+ 542:	6c 0e       	add	r6, r28
+ 544:	7d 1e       	adc	r7, r29
+		   around the loop - we need to send an update
+		   packet if it did */
+		for (i = 0; i <= I2C_ATMEGA_324; ++i)
+		{
+		    port_pointer = gio_pin_register[i];
+		    inputs[i] = *port_pointer & inputs_from_master[i]; // read inputs and mask inputs only
+ 546:	83 e0       	ldi	r24, 0x03	; 3
+ 548:	48 2e       	mov	r4, r24
+ 54a:	51 2c       	mov	r5, r1
+ 54c:	4c 0e       	add	r4, r28
+ 54e:	5d 1e       	adc	r5, r29
+		
+
+		
+		/***************************************** INPUT  AND OUTPUT *************************/
+		
+        if (changed & QUARTER_SEC)
+ 550:	80 91 3a 01 	lds	r24, 0x013A
+ 554:	87 ff       	sbrs	r24, 7
+ 556:	17 c0       	rjmp	.+46     	; 0x586 <main+0xd4>
+        {
+            changed &= ~QUARTER_SEC;
+ 558:	80 91 3a 01 	lds	r24, 0x013A
+ 55c:	8f 77       	andi	r24, 0x7F	; 127
+ 55e:	80 93 3a 01 	sts	0x013A, r24
+			++quartersecs;
+ 562:	80 91 76 01 	lds	r24, 0x0176
+ 566:	8f 5f       	subi	r24, 0xFF	; 255
+ 568:	80 93 76 01 	sts	0x0176, r24
+
+            // Events that happen repeatedly
+    		if (quartersecs >= TIMER_REQUEST_UPDATE) {
+ 56c:	80 91 76 01 	lds	r24, 0x0176
+ 570:	80 32       	cpi	r24, 0x20	; 32
+ 572:	48 f0       	brcs	.+18     	; 0x586 <main+0xd4>
+                cli();
+ 574:	f8 94       	cli
+    		  changed |= INPUTS_CHANGED;
+ 576:	80 91 3a 01 	lds	r24, 0x013A
+ 57a:	81 60       	ori	r24, 0x01	; 1
+ 57c:	80 93 3a 01 	sts	0x013A, r24
+    		  quartersecs = 0;
+ 580:	10 92 76 01 	sts	0x0176, r1
+    		  sei();
+ 584:	78 94       	sei
+
+		
+		/********************* handle TWI access here **********************************/
+		
+	   // Check if the TWI Transceiver has completed an operation.
+        if ( ! TWI_Transceiver_Busy() )
+ 586:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <TWI_Transceiver_Busy>
+ 58a:	88 23       	and	r24, r24
+ 58c:	09 f0       	breq	.+2      	; 0x590 <main+0xde>
+ 58e:	82 c1       	rjmp	.+772    	; 0x894 <main+0x3e2>
+        {
+        // Check if the last operation was successful
+          if ( TWI_statusReg.lastTransOK )
+ 590:	80 91 3c 01 	lds	r24, 0x013C
+ 594:	80 ff       	sbrs	r24, 0
+ 596:	7a c1       	rjmp	.+756    	; 0x88c <main+0x3da>
+          {
+        // Check if the last operation was a reception
+            if ( TWI_statusReg.RxDataInBuf )
+ 598:	81 ff       	sbrs	r24, 1
+ 59a:	4e c1       	rjmp	.+668    	; 0x838 <main+0x386>
+            {
+              TWI_Get_Data_From_Transceiver(messageBuf, TWI_Get_Data_Depth());      // with this length we don't need to save the length while receiving.
+ 59c:	0e 94 23 05 	call	0xa46	; 0xa46 <TWI_Get_Data_Depth>
+ 5a0:	68 2f       	mov	r22, r24
+ 5a2:	c7 01       	movw	r24, r14
+ 5a4:	0e 94 26 05 	call	0xa4c	; 0xa4c <TWI_Get_Data_From_Transceiver>
+            
+        // Check if the last operation was a reception as General Call
+              if ( TWI_statusReg.genAddressCall )
+ 5a8:	80 91 3c 01 	lds	r24, 0x013C
+ 5ac:	82 fd       	sbrc	r24, 2
+ 5ae:	69 c1       	rjmp	.+722    	; 0x882 <main+0x3d0>
+              }
+        // Ends up here if the last operation was a reception as Slave Address Match
+              else
+              {
+                // master issued a command
+                switch (messageBuf[I2C_CMD -1])
+ 5b0:	8b 85       	ldd	r24, Y+11	; 0x0b
+ 5b2:	86 30       	cpi	r24, 0x06	; 6
+ 5b4:	09 f4       	brne	.+2      	; 0x5b8 <main+0x106>
+ 5b6:	fa c0       	rjmp	.+500    	; 0x7ac <main+0x2fa>
+ 5b8:	87 30       	cpi	r24, 0x07	; 7
+ 5ba:	50 f4       	brcc	.+20     	; 0x5d0 <main+0x11e>
+ 5bc:	81 30       	cpi	r24, 0x01	; 1
+ 5be:	09 f4       	brne	.+2      	; 0x5c2 <main+0x110>
+ 5c0:	c6 c0       	rjmp	.+396    	; 0x74e <main+0x29c>
+ 5c2:	81 30       	cpi	r24, 0x01	; 1
+ 5c4:	08 f4       	brcc	.+2      	; 0x5c8 <main+0x116>
+ 5c6:	fa c0       	rjmp	.+500    	; 0x7bc <main+0x30a>
+ 5c8:	85 30       	cpi	r24, 0x05	; 5
+ 5ca:	09 f0       	breq	.+2      	; 0x5ce <main+0x11c>
+ 5cc:	5a c1       	rjmp	.+692    	; 0x882 <main+0x3d0>
+ 5ce:	10 c0       	rjmp	.+32     	; 0x5f0 <main+0x13e>
+ 5d0:	8a 30       	cpi	r24, 0x0A	; 10
+ 5d2:	09 f4       	brne	.+2      	; 0x5d6 <main+0x124>
+ 5d4:	1e c1       	rjmp	.+572    	; 0x812 <main+0x360>
+ 5d6:	8b 30       	cpi	r24, 0x0B	; 11
+ 5d8:	20 f4       	brcc	.+8      	; 0x5e2 <main+0x130>
+ 5da:	89 30       	cpi	r24, 0x09	; 9
+ 5dc:	09 f0       	breq	.+2      	; 0x5e0 <main+0x12e>
+ 5de:	51 c1       	rjmp	.+674    	; 0x882 <main+0x3d0>
+ 5e0:	53 c0       	rjmp	.+166    	; 0x688 <main+0x1d6>
+ 5e2:	8c 30       	cpi	r24, 0x0C	; 12
+ 5e4:	09 f4       	brne	.+2      	; 0x5e8 <main+0x136>
+ 5e6:	20 c1       	rjmp	.+576    	; 0x828 <main+0x376>
+ 5e8:	8e 30       	cpi	r24, 0x0E	; 14
+ 5ea:	09 f0       	breq	.+2      	; 0x5ee <main+0x13c>
+ 5ec:	4a c1       	rjmp	.+660    	; 0x882 <main+0x3d0>
+ 5ee:	86 c0       	rjmp	.+268    	; 0x6fc <main+0x24a>
+ 5f0:	a0 e0       	ldi	r26, 0x00	; 0
+ 5f2:	b1 e0       	ldi	r27, 0x01	; 1
+ 5f4:	01 e7       	ldi	r16, 0x71	; 113
+ 5f6:	11 e0       	ldi	r17, 0x01	; 1
+ 5f8:	b5 01       	movw	r22, r10
+                    case W_CMD_OUTPUTS_SET:
+                        // master has sent bytes to put onto the output ports
+                        // check which port pins have the DDR set and then set the PORT
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            port_pointer = gio_port_register[i];
+ 5fa:	8d 91       	ld	r24, X+
+ 5fc:	9c 91       	ld	r25, X
+ 5fe:	11 97       	sbiw	r26, 0x01	; 1
+ 600:	9f ab       	std	Y+55, r25	; 0x37
+ 602:	8e ab       	std	Y+54, r24	; 0x36
+ 604:	40 e0       	ldi	r20, 0x00	; 0
+ 606:	50 e0       	ldi	r21, 0x00	; 0
+                            for (j = 0; j < 8; ++j)
+                            {
+                                if (ddr_register_from_master[i] & (1<<j))
+ 608:	f8 01       	movw	r30, r16
+ 60a:	80 81       	ld	r24, Z
+ 60c:	90 e0       	ldi	r25, 0x00	; 0
+ 60e:	04 2e       	mov	r0, r20
+ 610:	02 c0       	rjmp	.+4      	; 0x616 <main+0x164>
+ 612:	95 95       	asr	r25
+ 614:	87 95       	ror	r24
+ 616:	0a 94       	dec	r0
+ 618:	e2 f7       	brpl	.-8      	; 0x612 <main+0x160>
+ 61a:	80 ff       	sbrs	r24, 0
+ 61c:	25 c0       	rjmp	.+74     	; 0x668 <main+0x1b6>
+                                {
+                                    // this is an output pin
+                                    if (messageBuf[I2C_DATA-1+i] & (1<<j)) *port_pointer |= (1<<j); else *port_pointer &= ~(1<<j);
+ 61e:	fb 01       	movw	r30, r22
+ 620:	80 81       	ld	r24, Z
+ 622:	90 e0       	ldi	r25, 0x00	; 0
+ 624:	04 2e       	mov	r0, r20
+ 626:	02 c0       	rjmp	.+4      	; 0x62c <main+0x17a>
+ 628:	95 95       	asr	r25
+ 62a:	87 95       	ror	r24
+ 62c:	0a 94       	dec	r0
+ 62e:	e2 f7       	brpl	.-8      	; 0x628 <main+0x176>
+ 630:	80 ff       	sbrs	r24, 0
+ 632:	0d c0       	rjmp	.+26     	; 0x64e <main+0x19c>
+ 634:	ee a9       	ldd	r30, Y+54	; 0x36
+ 636:	ff a9       	ldd	r31, Y+55	; 0x37
+ 638:	20 81       	ld	r18, Z
+ 63a:	c6 01       	movw	r24, r12
+ 63c:	04 2e       	mov	r0, r20
+ 63e:	02 c0       	rjmp	.+4      	; 0x644 <main+0x192>
+ 640:	88 0f       	add	r24, r24
+ 642:	99 1f       	adc	r25, r25
+ 644:	0a 94       	dec	r0
+ 646:	e2 f7       	brpl	.-8      	; 0x640 <main+0x18e>
+ 648:	28 2b       	or	r18, r24
+ 64a:	20 83       	st	Z, r18
+ 64c:	0d c0       	rjmp	.+26     	; 0x668 <main+0x1b6>
+ 64e:	ee a9       	ldd	r30, Y+54	; 0x36
+ 650:	ff a9       	ldd	r31, Y+55	; 0x37
+ 652:	20 81       	ld	r18, Z
+ 654:	c6 01       	movw	r24, r12
+ 656:	04 2e       	mov	r0, r20
+ 658:	02 c0       	rjmp	.+4      	; 0x65e <main+0x1ac>
+ 65a:	88 0f       	add	r24, r24
+ 65c:	99 1f       	adc	r25, r25
+ 65e:	0a 94       	dec	r0
+ 660:	e2 f7       	brpl	.-8      	; 0x65a <main+0x1a8>
+ 662:	80 95       	com	r24
+ 664:	82 23       	and	r24, r18
+ 666:	80 83       	st	Z, r24
+ 668:	4f 5f       	subi	r20, 0xFF	; 255
+ 66a:	5f 4f       	sbci	r21, 0xFF	; 255
+                        // master has sent bytes to put onto the output ports
+                        // check which port pins have the DDR set and then set the PORT
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            port_pointer = gio_port_register[i];
+                            for (j = 0; j < 8; ++j)
+ 66c:	48 30       	cpi	r20, 0x08	; 8
+ 66e:	51 05       	cpc	r21, r1
+ 670:	59 f6       	brne	.-106    	; 0x608 <main+0x156>
+ 672:	12 96       	adiw	r26, 0x02	; 2
+ 674:	0f 5f       	subi	r16, 0xFF	; 255
+ 676:	1f 4f       	sbci	r17, 0xFF	; 255
+ 678:	6f 5f       	subi	r22, 0xFF	; 255
+ 67a:	7f 4f       	sbci	r23, 0xFF	; 255
+                switch (messageBuf[I2C_CMD -1])
+                {
+                    case W_CMD_OUTPUTS_SET:
+                        // master has sent bytes to put onto the output ports
+                        // check which port pins have the DDR set and then set the PORT
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+ 67c:	f1 e0       	ldi	r31, 0x01	; 1
+ 67e:	a8 30       	cpi	r26, 0x08	; 8
+ 680:	bf 07       	cpc	r27, r31
+ 682:	09 f0       	breq	.+2      	; 0x686 <main+0x1d4>
+ 684:	ba cf       	rjmp	.-140    	; 0x5fa <main+0x148>
+ 686:	fd c0       	rjmp	.+506    	; 0x882 <main+0x3d0>
+ 688:	80 e1       	ldi	r24, 0x10	; 16
+ 68a:	91 e0       	ldi	r25, 0x01	; 1
+ 68c:	9d ab       	std	Y+53, r25	; 0x35
+ 68e:	8c ab       	std	Y+52, r24	; 0x34
+ 690:	e1 e7       	ldi	r30, 0x71	; 113
+ 692:	f1 e0       	ldi	r31, 0x01	; 1
+ 694:	b5 01       	movw	r22, r10
+                    
+                    case W_CMD_ACTIVATE_OUTPUTS:
+                        // master has sent the activation masks for the DDR
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            port_pointer = gio_ddr_register[i];
+ 696:	ac a9       	ldd	r26, Y+52	; 0x34
+ 698:	bd a9       	ldd	r27, Y+53	; 0x35
+ 69a:	0d 91       	ld	r16, X+
+ 69c:	1c 91       	ld	r17, X
+                            ddr_register_from_master[i] = 0;
+ 69e:	10 82       	st	Z, r1
+ 6a0:	40 e0       	ldi	r20, 0x00	; 0
+ 6a2:	50 e0       	ldi	r21, 0x00	; 0
+                            
+                            for (j = 0; j < 8; ++j)
+                            {
+                                // this is an output pin
+                                if (messageBuf[I2C_DATA-1+i] & (1<<j))
+ 6a4:	db 01       	movw	r26, r22
+ 6a6:	8c 91       	ld	r24, X
+ 6a8:	90 e0       	ldi	r25, 0x00	; 0
+ 6aa:	04 2e       	mov	r0, r20
+ 6ac:	02 c0       	rjmp	.+4      	; 0x6b2 <main+0x200>
+ 6ae:	95 95       	asr	r25
+ 6b0:	87 95       	ror	r24
+ 6b2:	0a 94       	dec	r0
+ 6b4:	e2 f7       	brpl	.-8      	; 0x6ae <main+0x1fc>
+ 6b6:	80 ff       	sbrs	r24, 0
+ 6b8:	10 c0       	rjmp	.+32     	; 0x6da <main+0x228>
+                                {
+                                    *port_pointer |= (1<<j);
+ 6ba:	d8 01       	movw	r26, r16
+ 6bc:	8c 91       	ld	r24, X
+ 6be:	d6 01       	movw	r26, r12
+ 6c0:	04 2e       	mov	r0, r20
+ 6c2:	02 c0       	rjmp	.+4      	; 0x6c8 <main+0x216>
+ 6c4:	aa 0f       	add	r26, r26
+ 6c6:	bb 1f       	adc	r27, r27
+ 6c8:	0a 94       	dec	r0
+ 6ca:	e2 f7       	brpl	.-8      	; 0x6c4 <main+0x212>
+ 6cc:	9d 01       	movw	r18, r26
+ 6ce:	8a 2b       	or	r24, r26
+ 6d0:	d8 01       	movw	r26, r16
+ 6d2:	8c 93       	st	X, r24
+                                    ddr_register_from_master[i] |= (1<<j);
+ 6d4:	80 81       	ld	r24, Z
+ 6d6:	82 2b       	or	r24, r18
+ 6d8:	80 83       	st	Z, r24
+ 6da:	4f 5f       	subi	r20, 0xFF	; 255
+ 6dc:	5f 4f       	sbci	r21, 0xFF	; 255
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            port_pointer = gio_ddr_register[i];
+                            ddr_register_from_master[i] = 0;
+                            
+                            for (j = 0; j < 8; ++j)
+ 6de:	48 30       	cpi	r20, 0x08	; 8
+ 6e0:	51 05       	cpc	r21, r1
+ 6e2:	01 f7       	brne	.-64     	; 0x6a4 <main+0x1f2>
+ 6e4:	8c a9       	ldd	r24, Y+52	; 0x34
+ 6e6:	9d a9       	ldd	r25, Y+53	; 0x35
+ 6e8:	02 96       	adiw	r24, 0x02	; 2
+ 6ea:	9d ab       	std	Y+53, r25	; 0x35
+ 6ec:	8c ab       	std	Y+52, r24	; 0x34
+ 6ee:	31 96       	adiw	r30, 0x01	; 1
+ 6f0:	6f 5f       	subi	r22, 0xFF	; 255
+ 6f2:	7f 4f       	sbci	r23, 0xFF	; 255
+                        }
+                        break;
+                    
+                    case W_CMD_ACTIVATE_OUTPUTS:
+                        // master has sent the activation masks for the DDR
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+ 6f4:	88 51       	subi	r24, 0x18	; 24
+ 6f6:	91 40       	sbci	r25, 0x01	; 1
+ 6f8:	71 f6       	brne	.-100    	; 0x696 <main+0x1e4>
+ 6fa:	c3 c0       	rjmp	.+390    	; 0x882 <main+0x3d0>
+ 6fc:	e8 e6       	ldi	r30, 0x68	; 104
+ 6fe:	f1 e0       	ldi	r31, 0x01	; 1
+ 700:	d5 01       	movw	r26, r10
+						
+					case W_CMD_ACTIVATE_INPUTS:
+                        // master has sent the activation masks for the DDR
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            inputs_from_master[i] = 0;
+ 702:	10 82       	st	Z, r1
+                            
+                            for (j = 0; j < 8; ++j)
+                            {
+                                // this is an output pin
+                                if (messageBuf[I2C_DATA-1+i] & (1<<j))
+ 704:	8c 91       	ld	r24, X
+ 706:	68 2f       	mov	r22, r24
+ 708:	70 e0       	ldi	r23, 0x00	; 0
+ 70a:	40 e0       	ldi	r20, 0x00	; 0
+ 70c:	50 e0       	ldi	r21, 0x00	; 0
+ 70e:	cb 01       	movw	r24, r22
+ 710:	04 2e       	mov	r0, r20
+ 712:	02 c0       	rjmp	.+4      	; 0x718 <main+0x266>
+ 714:	95 95       	asr	r25
+ 716:	87 95       	ror	r24
+ 718:	0a 94       	dec	r0
+ 71a:	e2 f7       	brpl	.-8      	; 0x714 <main+0x262>
+ 71c:	80 ff       	sbrs	r24, 0
+ 71e:	0b c0       	rjmp	.+22     	; 0x736 <main+0x284>
+                                {
+                                  
+                                    inputs_from_master[i] |= (1<<j);
+ 720:	c6 01       	movw	r24, r12
+ 722:	04 2e       	mov	r0, r20
+ 724:	02 c0       	rjmp	.+4      	; 0x72a <main+0x278>
+ 726:	88 0f       	add	r24, r24
+ 728:	99 1f       	adc	r25, r25
+ 72a:	0a 94       	dec	r0
+ 72c:	e2 f7       	brpl	.-8      	; 0x726 <main+0x274>
+ 72e:	9c 01       	movw	r18, r24
+ 730:	80 81       	ld	r24, Z
+ 732:	82 2b       	or	r24, r18
+ 734:	80 83       	st	Z, r24
+ 736:	4f 5f       	subi	r20, 0xFF	; 255
+ 738:	5f 4f       	sbci	r21, 0xFF	; 255
+                        // master has sent the activation masks for the DDR
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            inputs_from_master[i] = 0;
+                            
+                            for (j = 0; j < 8; ++j)
+ 73a:	48 30       	cpi	r20, 0x08	; 8
+ 73c:	51 05       	cpc	r21, r1
+ 73e:	39 f7       	brne	.-50     	; 0x70e <main+0x25c>
+ 740:	31 96       	adiw	r30, 0x01	; 1
+ 742:	11 96       	adiw	r26, 0x01	; 1
+                        }
+                        break;
+						
+					case W_CMD_ACTIVATE_INPUTS:
+                        // master has sent the activation masks for the DDR
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+ 744:	91 e0       	ldi	r25, 0x01	; 1
+ 746:	ec 36       	cpi	r30, 0x6C	; 108
+ 748:	f9 07       	cpc	r31, r25
+ 74a:	d9 f6       	brne	.-74     	; 0x702 <main+0x250>
+ 74c:	9a c0       	rjmp	.+308    	; 0x882 <main+0x3d0>
+                        }
+                        break;
+                    
+                    case W_CMD_BLOCK_PREPARE_DATA_LENGTH:
+                        
+                        TWI_Operation.ElementNumber = messageBuf[I2C_BLOCK_REMOTE_NUMBER -1];
+ 74e:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 750:	90 93 6d 01 	sts	0x016D, r25
+                        if (TWI_Operation.ElementNumber < N_PHYSICAL_BLOCK_INTERFACES)
+ 754:	92 30       	cpi	r25, 0x02	; 2
+ 756:	a8 f4       	brcc	.+42     	; 0x782 <main+0x2d0>
+                        {
+                            cli();
+ 758:	f8 94       	cli
+                            TWI_Operation.ReadLength = BlockRingBufferDepth(&BlockRXBuffer[TWI_Operation.ElementNumber]);
+ 75a:	99 9d       	mul	r25, r9
+ 75c:	f0 01       	movw	r30, r0
+ 75e:	11 24       	eor	r1, r1
+ 760:	ef 58       	subi	r30, 0x8F	; 143
+ 762:	fc 4f       	sbci	r31, 0xFC	; 252
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 764:	90 81       	ld	r25, Z
+ 766:	81 81       	ldd	r24, Z+1	; 0x01
+ 768:	98 17       	cp	r25, r24
+ 76a:	18 f0       	brcs	.+6      	; 0x772 <main+0x2c0>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 76c:	20 81       	ld	r18, Z
+ 76e:	81 81       	ldd	r24, Z+1	; 0x01
+ 770:	03 c0       	rjmp	.+6      	; 0x778 <main+0x2c6>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 772:	20 81       	ld	r18, Z
+ 774:	81 81       	ldd	r24, Z+1	; 0x01
+ 776:	26 50       	subi	r18, 0x06	; 6
+ 778:	28 1b       	sub	r18, r24
+ 77a:	20 93 70 01 	sts	0x0170, r18
+                            sei();
+ 77e:	78 94       	sei
+ 780:	04 c0       	rjmp	.+8      	; 0x78a <main+0x2d8>
+                        } else {
+                            TWI_Operation.ReadLength = 0;
+ 782:	10 92 70 01 	sts	0x0170, r1
+                            TWI_Operation.ElementNumber = 0;
+ 786:	10 92 6d 01 	sts	0x016D, r1
+                        }
+						if (TWI_Operation.ReadLength > (I2C_MAX_MESSAGE_LENGTH)) TWI_Operation.ReadLength = I2C_MAX_MESSAGE_LENGTH;
+ 78a:	80 91 70 01 	lds	r24, 0x0170
+ 78e:	89 32       	cpi	r24, 0x29	; 41
+ 790:	10 f0       	brcs	.+4      	; 0x796 <main+0x2e4>
+ 792:	80 92 70 01 	sts	0x0170, r8
+                        
+                        messageBuf[0] = TWI_Operation.ReadLength;
+ 796:	80 91 70 01 	lds	r24, 0x0170
+ 79a:	8b 87       	std	Y+11, r24	; 0x0b
+                        TWI_Operation.Operation = TWI_READ_BLOCK;
+ 79c:	82 e0       	ldi	r24, 0x02	; 2
+ 79e:	80 93 6c 01 	sts	0x016C, r24
+                        TWI_Operation.Suboperation = R_CMD_BLOCK_GET_DATA_LENGTH;
+ 7a2:	80 93 6e 01 	sts	0x016E, r24
+                        
+                        TWI_Start_Transceiver_With_Data( messageBuf, R_CMD_BLOCK_GET_DATA_LENGTH_LEN-1);
+ 7a6:	c7 01       	movw	r24, r14
+ 7a8:	61 e0       	ldi	r22, 0x01	; 1
+ 7aa:	69 c0       	rjmp	.+210    	; 0x87e <main+0x3cc>
+                    case W_CMD_INPUTS_PREPARE:
+                        // prepare the data and start the transceiver
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                          //  port_pointer = gio_pin_register[i];
+                            messageBuf[i] = inputs[i];//*port_pointer;
+ 7ac:	8b 81       	ldd	r24, Y+3	; 0x03
+ 7ae:	8b 87       	std	Y+11, r24	; 0x0b
+ 7b0:	8c 81       	ldd	r24, Y+4	; 0x04
+ 7b2:	8c 87       	std	Y+12, r24	; 0x0c
+ 7b4:	8d 81       	ldd	r24, Y+5	; 0x05
+ 7b6:	8d 87       	std	Y+13, r24	; 0x0d
+ 7b8:	8e 81       	ldd	r24, Y+6	; 0x06
+ 7ba:	32 c0       	rjmp	.+100    	; 0x820 <main+0x36e>
+                        TWI_Start_Transceiver_With_Data( messageBuf, I2C_ATMEGA_324 +1);
+
+                        break;
+                        
+                    case W_CMD_BLOCK_WRITE_DATA:
+                        TWI_Operation.ReadLength = messageBuf[I2C_LEN -1] -1;  // this includes I2C_CMD, I2C_LEN, I2C_BLOCK_REMOTE_NUMBER, data, but not the address byte
+ 7bc:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 7be:	81 50       	subi	r24, 0x01	; 1
+ 7c0:	80 93 70 01 	sts	0x0170, r24
+                        if (TWI_Operation.ReadLength > TWI_BUFFER_SIZE) TWI_Operation.ReadLength = TWI_BUFFER_SIZE;
+ 7c4:	8a 32       	cpi	r24, 0x2A	; 42
+ 7c6:	18 f0       	brcs	.+6      	; 0x7ce <main+0x31c>
+ 7c8:	a9 e2       	ldi	r26, 0x29	; 41
+ 7ca:	a0 93 70 01 	sts	0x0170, r26
+                        
+                        TWI_Operation.ElementNumber = messageBuf[I2C_BLOCK_REMOTE_NUMBER -1];
+ 7ce:	8d 85       	ldd	r24, Y+13	; 0x0d
+ 7d0:	80 93 6d 01 	sts	0x016D, r24
+                        if (TWI_Operation.ElementNumber < N_PHYSICAL_BLOCK_INTERFACES)
+ 7d4:	82 30       	cpi	r24, 0x02	; 2
+ 7d6:	08 f0       	brcs	.+2      	; 0x7da <main+0x328>
+ 7d8:	54 c0       	rjmp	.+168    	; 0x882 <main+0x3d0>
+ 7da:	13 e0       	ldi	r17, 0x03	; 3
+ 7dc:	0e c0       	rjmp	.+28     	; 0x7fa <main+0x348>
+                        {
+                            for (i = I2C_BLOCK_REMOTE_NUMBER -1 +1; i < TWI_Operation.ReadLength; ++i)
+                                BlockRingBufferPush(&(BlockTXBuffer[TWI_Operation.ElementNumber]), messageBuf[i]);
+ 7de:	80 91 6d 01 	lds	r24, 0x016D
+ 7e2:	89 9d       	mul	r24, r9
+ 7e4:	c0 01       	movw	r24, r0
+ 7e6:	11 24       	eor	r1, r1
+ 7e8:	f7 01       	movw	r30, r14
+ 7ea:	e1 0f       	add	r30, r17
+ 7ec:	f1 1d       	adc	r31, r1
+ 7ee:	89 58       	subi	r24, 0x89	; 137
+ 7f0:	9e 4f       	sbci	r25, 0xFE	; 254
+ 7f2:	60 81       	ld	r22, Z
+ 7f4:	0e 94 ac 00 	call	0x158	; 0x158 <BlockRingBufferPush>
+                        if (TWI_Operation.ReadLength > TWI_BUFFER_SIZE) TWI_Operation.ReadLength = TWI_BUFFER_SIZE;
+                        
+                        TWI_Operation.ElementNumber = messageBuf[I2C_BLOCK_REMOTE_NUMBER -1];
+                        if (TWI_Operation.ElementNumber < N_PHYSICAL_BLOCK_INTERFACES)
+                        {
+                            for (i = I2C_BLOCK_REMOTE_NUMBER -1 +1; i < TWI_Operation.ReadLength; ++i)
+ 7f8:	1f 5f       	subi	r17, 0xFF	; 255
+ 7fa:	80 91 70 01 	lds	r24, 0x0170
+ 7fe:	18 17       	cp	r17, r24
+ 800:	70 f3       	brcs	.-36     	; 0x7de <main+0x32c>
+                                BlockRingBufferPush(&(BlockTXBuffer[TWI_Operation.ElementNumber]), messageBuf[i]);
+							BlockActive[TWI_Operation.ElementNumber] = TRUE;
+ 802:	80 91 6d 01 	lds	r24, 0x016D
+ 806:	f1 01       	movw	r30, r2
+ 808:	e8 0f       	add	r30, r24
+ 80a:	f1 1d       	adc	r31, r1
+ 80c:	81 e0       	ldi	r24, 0x01	; 1
+ 80e:	80 83       	st	Z, r24
+ 810:	38 c0       	rjmp	.+112    	; 0x882 <main+0x3d0>
+                     case W_CMD_OLD_INPUTS_PREP:
+                        // prepare the data and start the transceiver
+                        for (i = 0; i <= I2C_ATMEGA_324; ++i)
+                        {
+                            //port_pointer = gio_pin_register[i];
+                            messageBuf[i] = old_inputs[i];
+ 812:	8f 81       	ldd	r24, Y+7	; 0x07
+ 814:	8b 87       	std	Y+11, r24	; 0x0b
+ 816:	88 85       	ldd	r24, Y+8	; 0x08
+ 818:	8c 87       	std	Y+12, r24	; 0x0c
+ 81a:	89 85       	ldd	r24, Y+9	; 0x09
+ 81c:	8d 87       	std	Y+13, r24	; 0x0d
+ 81e:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 820:	8e 87       	std	Y+14, r24	; 0x0e
+                        }
+                        TWI_Start_Transceiver_With_Data( messageBuf, I2C_ATMEGA_324 +1);
+ 822:	c7 01       	movw	r24, r14
+ 824:	64 e0       	ldi	r22, 0x04	; 4
+ 826:	2b c0       	rjmp	.+86     	; 0x87e <main+0x3cc>
+                        //changed &= ~INPUTS_CHANGED;
+                        break;
+                    case W_CMD_CHANGED_PREP:
+                        // prepare the data and start the transceiver
+                       
+                            messageBuf[0] = changed;
+ 828:	80 91 3a 01 	lds	r24, 0x013A
+ 82c:	8b 87       	std	Y+11, r24	; 0x0b
+							messageBuf[1] = TWI_DDR;
+ 82e:	87 b1       	in	r24, 0x07	; 7
+ 830:	8c 87       	std	Y+12, r24	; 0x0c
+                            TWI_Start_Transceiver_With_Data( messageBuf, 2);
+ 832:	c7 01       	movw	r24, r14
+ 834:	62 e0       	ldi	r22, 0x02	; 2
+ 836:	23 c0       	rjmp	.+70     	; 0x87e <main+0x3cc>
+                // there is no need for a sequence control
+                // we just leave this block free, the code will activate the transceiver at the block below
+                
+                // if operation before was a transmission, and we marked that as a TWI_READ_BLOCK,
+                // then it was reading the Depth of the BlockRingBuffer
+                if (TWI_Operation.Operation == TWI_READ_BLOCK)
+ 838:	80 91 6c 01 	lds	r24, 0x016C
+ 83c:	82 30       	cpi	r24, 0x02	; 2
+ 83e:	09 f5       	brne	.+66     	; 0x882 <main+0x3d0>
+                {
+                    TWI_Operation.Operation = NO_OP;
+ 840:	10 92 6c 01 	sts	0x016C, r1
+                    if ((TWI_Operation.Suboperation == R_CMD_BLOCK_GET_DATA_LENGTH) &&
+ 844:	80 91 6e 01 	lds	r24, 0x016E
+ 848:	82 30       	cpi	r24, 0x02	; 2
+ 84a:	d9 f4       	brne	.+54     	; 0x882 <main+0x3d0>
+ 84c:	80 91 70 01 	lds	r24, 0x0170
+ 850:	88 23       	and	r24, r24
+ 852:	b9 f0       	breq	.+46     	; 0x882 <main+0x3d0>
+ 854:	10 e0       	ldi	r17, 0x00	; 0
+ 856:	0e c0       	rjmp	.+28     	; 0x874 <main+0x3c2>
+                        (TWI_Operation.ReadLength > 0)) // we sent a length to the master, and now must prepare to send it
+                    {
+                        for (i = 0; i < TWI_Operation.ReadLength; ++i)
+                            messageBuf[i] = BlockRingBufferPop(&BlockRXBuffer[TWI_Operation.ElementNumber]);
+ 858:	80 91 6d 01 	lds	r24, 0x016D
+ 85c:	89 9d       	mul	r24, r9
+ 85e:	c0 01       	movw	r24, r0
+ 860:	11 24       	eor	r1, r1
+ 862:	8f 58       	subi	r24, 0x8F	; 143
+ 864:	9c 4f       	sbci	r25, 0xFC	; 252
+ 866:	0e 94 f2 00 	call	0x1e4	; 0x1e4 <BlockRingBufferPop>
+ 86a:	f7 01       	movw	r30, r14
+ 86c:	e1 0f       	add	r30, r17
+ 86e:	f1 1d       	adc	r31, r1
+ 870:	80 83       	st	Z, r24
+                {
+                    TWI_Operation.Operation = NO_OP;
+                    if ((TWI_Operation.Suboperation == R_CMD_BLOCK_GET_DATA_LENGTH) &&
+                        (TWI_Operation.ReadLength > 0)) // we sent a length to the master, and now must prepare to send it
+                    {
+                        for (i = 0; i < TWI_Operation.ReadLength; ++i)
+ 872:	1f 5f       	subi	r17, 0xFF	; 255
+ 874:	60 91 70 01 	lds	r22, 0x0170
+ 878:	16 17       	cp	r17, r22
+ 87a:	70 f3       	brcs	.-36     	; 0x858 <main+0x3a6>
+                            messageBuf[i] = BlockRingBufferPop(&BlockRXBuffer[TWI_Operation.ElementNumber]);
+                        
+                        TWI_Start_Transceiver_With_Data(messageBuf,  TWI_Operation.ReadLength);
+ 87c:	c7 01       	movw	r24, r14
+ 87e:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <TWI_Start_Transceiver_With_Data>
+                }
+                
+            }
+        // Check if the TWI Transceiver has already been started.
+        // If not then restart it to prepare it for new receptions.
+            if ( ! TWI_Transceiver_Busy() )
+ 882:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <TWI_Transceiver_Busy>
+ 886:	88 23       	and	r24, r24
+ 888:	29 f4       	brne	.+10     	; 0x894 <main+0x3e2>
+ 88a:	02 c0       	rjmp	.+4      	; 0x890 <main+0x3de>
+          }
+        // Ends up here if the last operation completed unsuccessfully
+          else
+          {
+ //           TWI_Act_On_Failure_In_Last_Transmission( TWI_Get_State_Info() );
+               TWI_Act_On_Failure_In_Last_Transmission( TWI_Get_State() );
+ 88c:	0e 94 f5 04 	call	0x9ea	; 0x9ea <TWI_Get_State>
+        if (!(eeprom_is_ready())) eeprom_busy_wait();
+        SlaveAddress = eeprom_read_byte((uint8_t *)EE_OWN_ADDRESS);
+        TWI_Slave_Initialise( (SlaveAddress << TWI_ADR_BITS) | (FALSE << TWI_GEN_BIT) );
+    }
+    */
+    TWI_Start_Transceiver();
+ 890:	0e 94 16 05 	call	0xa2c	; 0xa2c <TWI_Start_Transceiver>
+ 894:	48 e0       	ldi	r20, 0x08	; 8
+ 896:	51 e0       	ldi	r21, 0x01	; 1
+ 898:	d3 01       	movw	r26, r6
+ 89a:	20 e0       	ldi	r18, 0x00	; 0
+ 89c:	30 e0       	ldi	r19, 0x00	; 0
+		/* Test if something changed from the last time
+		   around the loop - we need to send an update
+		   packet if it did */
+		for (i = 0; i <= I2C_ATMEGA_324; ++i)
+		{
+		    port_pointer = gio_pin_register[i];
+ 89e:	fa 01       	movw	r30, r20
+ 8a0:	80 81       	ld	r24, Z
+ 8a2:	91 81       	ldd	r25, Z+1	; 0x01
+		    inputs[i] = *port_pointer & inputs_from_master[i]; // read inputs and mask inputs only
+ 8a4:	fc 01       	movw	r30, r24
+ 8a6:	90 81       	ld	r25, Z
+ 8a8:	f9 01       	movw	r30, r18
+ 8aa:	e8 59       	subi	r30, 0x98	; 152
+ 8ac:	fe 4f       	sbci	r31, 0xFE	; 254
+ 8ae:	80 81       	ld	r24, Z
+ 8b0:	98 23       	and	r25, r24
+ 8b2:	f2 01       	movw	r30, r4
+ 8b4:	e2 0f       	add	r30, r18
+ 8b6:	f3 1f       	adc	r31, r19
+ 8b8:	90 83       	st	Z, r25
+		    
+		    if (old_inputs[i] != inputs[i])
+ 8ba:	8c 91       	ld	r24, X
+ 8bc:	89 17       	cp	r24, r25
+ 8be:	31 f0       	breq	.+12     	; 0x8cc <main+0x41a>
+		    {
+		        old_inputs[i] = inputs[i];
+ 8c0:	9c 93       	st	X, r25
+		        changed |= INPUTS_CHANGED;
+ 8c2:	80 91 3a 01 	lds	r24, 0x013A
+ 8c6:	81 60       	ori	r24, 0x01	; 1
+ 8c8:	80 93 3a 01 	sts	0x013A, r24
+ 8cc:	2f 5f       	subi	r18, 0xFF	; 255
+ 8ce:	3f 4f       	sbci	r19, 0xFF	; 255
+ 8d0:	4e 5f       	subi	r20, 0xFE	; 254
+ 8d2:	5f 4f       	sbci	r21, 0xFF	; 255
+ 8d4:	11 96       	adiw	r26, 0x01	; 1
+		
+		
+		/* Test if something changed from the last time
+		   around the loop - we need to send an update
+		   packet if it did */
+		for (i = 0; i <= I2C_ATMEGA_324; ++i)
+ 8d6:	24 30       	cpi	r18, 0x04	; 4
+ 8d8:	31 05       	cpc	r19, r1
+ 8da:	09 f7       	brne	.-62     	; 0x89e <main+0x3ec>
+		    }
+		}
+		
+		for (i = 0; i < N_PHYSICAL_BLOCK_INTERFACES; ++i)
+		{
+		    if (BlockActive[i] && BlockRingBufferDepth(&BlockRXBuffer[i]))
+ 8dc:	89 81       	ldd	r24, Y+1	; 0x01
+ 8de:	88 23       	and	r24, r24
+ 8e0:	c9 f0       	breq	.+50     	; 0x914 <__stack+0x15>
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 8e2:	90 91 71 03 	lds	r25, 0x0371
+ 8e6:	80 91 72 03 	lds	r24, 0x0372
+ 8ea:	98 17       	cp	r25, r24
+ 8ec:	68 f4       	brcc	.+26     	; 0x908 <__stack+0x9>
+ 8ee:	06 c0       	rjmp	.+12     	; 0x8fc <main+0x44a>
+		    {
+		        changed |= BLOCK_CHANGED;
+ 8f0:	80 91 3a 01 	lds	r24, 0x013A
+ 8f4:	82 60       	ori	r24, 0x02	; 2
+ 8f6:	80 93 3a 01 	sts	0x013A, r24
+ 8fa:	0c c0       	rjmp	.+24     	; 0x914 <__stack+0x15>
+	{
+	    return (r->headIdx - r->tailIdx);
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 8fc:	90 91 71 03 	lds	r25, 0x0371
+ 900:	80 91 72 03 	lds	r24, 0x0372
+ 904:	96 50       	subi	r25, 0x06	; 6
+ 906:	04 c0       	rjmp	.+8      	; 0x910 <__stack+0x11>
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+	{
+	    return (r->headIdx - r->tailIdx);
+ 908:	90 91 71 03 	lds	r25, 0x0371
+ 90c:	80 91 72 03 	lds	r24, 0x0372
+ 910:	98 1b       	sub	r25, r24
+		    }
+		}
+		
+		for (i = 0; i < N_PHYSICAL_BLOCK_INTERFACES; ++i)
+		{
+		    if (BlockActive[i] && BlockRingBufferDepth(&BlockRXBuffer[i]))
+ 912:	71 f7       	brne	.-36     	; 0x8f0 <main+0x43e>
+ 914:	8a 81       	ldd	r24, Y+2	; 0x02
+ 916:	88 23       	and	r24, r24
+ 918:	b9 f0       	breq	.+46     	; 0x948 <__stack+0x49>
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 91a:	90 91 6e 04 	lds	r25, 0x046E
+ 91e:	80 91 6f 04 	lds	r24, 0x046F
+ 922:	98 17       	cp	r25, r24
+ 924:	28 f0       	brcs	.+10     	; 0x930 <__stack+0x31>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 926:	90 91 6e 04 	lds	r25, 0x046E
+ 92a:	80 91 6f 04 	lds	r24, 0x046F
+ 92e:	05 c0       	rjmp	.+10     	; 0x93a <__stack+0x3b>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 930:	90 91 6e 04 	lds	r25, 0x046E
+ 934:	80 91 6f 04 	lds	r24, 0x046F
+ 938:	96 50       	subi	r25, 0x06	; 6
+ 93a:	98 1b       	sub	r25, r24
+ 93c:	29 f0       	breq	.+10     	; 0x948 <__stack+0x49>
+		    {
+		        changed |= BLOCK_CHANGED;
+ 93e:	80 91 3a 01 	lds	r24, 0x013A
+ 942:	82 60       	ori	r24, 0x02	; 2
+ 944:	80 93 3a 01 	sts	0x013A, r24
+		    }
+		}
+		        
+		
+		if (changed & (BLOCK_CHANGED | INPUTS_CHANGED))
+ 948:	80 91 3a 01 	lds	r24, 0x013A
+ 94c:	90 e0       	ldi	r25, 0x00	; 0
+ 94e:	83 70       	andi	r24, 0x03	; 3
+ 950:	90 70       	andi	r25, 0x00	; 0
+ 952:	89 2b       	or	r24, r25
+ 954:	31 f0       	breq	.+12     	; 0x962 <__stack+0x63>
+		{
+		    // reset the update timer
+            // ticks = 0;
+		    TWI_ACTIVATE_INT;
+ 956:	3a 9a       	sbi	0x07, 2	; 7
+		    changed &= ~(BLOCK_CHANGED | INPUTS_CHANGED);
+ 958:	80 91 3a 01 	lds	r24, 0x013A
+ 95c:	8c 7f       	andi	r24, 0xFC	; 252
+ 95e:	80 93 3a 01 	sts	0x013A, r24
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 962:	90 91 77 01 	lds	r25, 0x0177
+ 966:	80 91 78 01 	lds	r24, 0x0178
+ 96a:	98 17       	cp	r25, r24
+ 96c:	28 f0       	brcs	.+10     	; 0x978 <__stack+0x79>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 96e:	90 91 77 01 	lds	r25, 0x0177
+ 972:	80 91 78 01 	lds	r24, 0x0178
+ 976:	05 c0       	rjmp	.+10     	; 0x982 <__stack+0x83>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 978:	90 91 77 01 	lds	r25, 0x0177
+ 97c:	80 91 78 01 	lds	r24, 0x0178
+ 980:	96 50       	subi	r25, 0x06	; 6
+ 982:	98 1b       	sub	r25, r24
+		}
+		
+//if (TWI_DDR & TWI_INT) STROBE_PORT &= ~STROBE; else STROBE_PORT |= STROBE;
+		
+		if (BlockRingBufferDepth(&(BlockTXBuffer[0]))) ACTIVATE_BLOCK0_TX;
+ 984:	29 f0       	breq	.+10     	; 0x990 <__stack+0x91>
+ 986:	80 91 c1 00 	lds	r24, 0x00C1
+ 98a:	80 62       	ori	r24, 0x20	; 32
+ 98c:	80 93 c1 00 	sts	0x00C1, r24
+*/
+
+uint8_t BlockRingBufferDepth(BlockRingBuffer* r)
+{
+	//return((r->headIdx - r->tailIdx + BLOCK_RING_BUFFER_SZ) % BLOCK_RING_BUFFER_SZ); // this works only because C calculates in int type.
+	if (r->headIdx >= r->tailIdx)
+ 990:	90 91 74 02 	lds	r25, 0x0274
+ 994:	80 91 75 02 	lds	r24, 0x0275
+ 998:	98 17       	cp	r25, r24
+ 99a:	28 f0       	brcs	.+10     	; 0x9a6 <__stack+0xa7>
+	{
+	    return (r->headIdx - r->tailIdx);
+ 99c:	90 91 74 02 	lds	r25, 0x0274
+ 9a0:	80 91 75 02 	lds	r24, 0x0275
+ 9a4:	05 c0       	rjmp	.+10     	; 0x9b0 <__stack+0xb1>
+	} else {
+	    return (BLOCK_RING_BUFFER_SZ - (r->tailIdx - r->headIdx));
+ 9a6:	90 91 74 02 	lds	r25, 0x0274
+ 9aa:	80 91 75 02 	lds	r24, 0x0275
+ 9ae:	96 50       	subi	r25, 0x06	; 6
+ 9b0:	98 1b       	sub	r25, r24
+	#if (N_PHYSICAL_BLOCK_INTERFACES >= 2)
+		if (BlockRingBufferDepth(&(BlockTXBuffer[1]))) ACTIVATE_BLOCK1_TX;
+ 9b2:	09 f4       	brne	.+2      	; 0x9b6 <__stack+0xb7>
+ 9b4:	cd cd       	rjmp	.-1126   	; 0x550 <main+0x9e>
+ 9b6:	80 91 c9 00 	lds	r24, 0x00C9
+ 9ba:	80 62       	ori	r24, 0x20	; 32
+ 9bc:	80 93 c9 00 	sts	0x00C9, r24
+ 9c0:	c7 cd       	rjmp	.-1138   	; 0x550 <main+0x9e>
+
+000009c2 <TWI_Slave_Initialise>:
+The TWI module is configured to NACK on any requests. Use a TWI_Start_Transceiver function to
+start the TWI.
+****************************************************************************/
+void TWI_Slave_Initialise( unsigned char TWI_ownAddress )
+{
+  TWAR = TWI_ownAddress;                            // Set own TWI slave address. Accept TWI General Calls.
+ 9c2:	80 93 ba 00 	sts	0x00BA, r24
+  TWDR = 0xFF;                                      // Default content = SDA released.
+ 9c6:	8f ef       	ldi	r24, 0xFF	; 255
+ 9c8:	80 93 bb 00 	sts	0x00BB, r24
+  TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins.
+ 9cc:	84 e0       	ldi	r24, 0x04	; 4
+ 9ce:	80 93 bc 00 	sts	0x00BC, r24
+         (0<<TWIE)|(0<<TWINT)|                      // Disable TWI Interupt.
+         (0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Do not ACK on any requests, yet.
+         (0<<TWWC);                                 //
+}
+ 9d2:	08 95       	ret
+
+000009d4 <TWI_Transceiver_Busy>:
+/****************************************************************************
+Call this function to test if the TWI_ISR is busy transmitting.
+****************************************************************************/
+unsigned char TWI_Transceiver_Busy( void )
+{
+  return ( TWCR & (1<<TWIE) );                  // IF TWI interrupt is enabled then the Transceiver is busy
+ 9d4:	80 91 bc 00 	lds	r24, 0x00BC
+}
+ 9d8:	81 70       	andi	r24, 0x01	; 1
+ 9da:	08 95       	ret
+
+000009dc <TWI_Get_State_Info>:
+/****************************************************************************
+Call this function to test if the TWI_ISR is busy transmitting.
+****************************************************************************/
+unsigned char TWI_Transceiver_Busy( void )
+{
+  return ( TWCR & (1<<TWIE) );                  // IF TWI interrupt is enabled then the Transceiver is busy
+ 9dc:	80 91 bc 00 	lds	r24, 0x00BC
+until the TWI_ISR has completed with the previous operation. If there was an error, then the function
+will return the TWI State code.
+****************************************************************************/
+unsigned char TWI_Get_State_Info( void )
+{
+  while ( TWI_Transceiver_Busy() );             // Wait until TWI has completed the transmission.
+ 9e0:	80 fd       	sbrc	r24, 0
+ 9e2:	fc cf       	rjmp	.-8      	; 0x9dc <TWI_Get_State_Info>
+  return ( TWI_state );                         // Return error state.
+}
+ 9e4:	80 91 38 01 	lds	r24, 0x0138
+ 9e8:	08 95       	ret
+
+000009ea <TWI_Get_State>:
+****************************************************************************/
+unsigned char TWI_Get_State( void )
+{
+//  while ( TWI_Transceiver_Busy() );             // Wait until TWI has completed the transmission.
+  return ( TWI_state );                         // Return error state.
+}
+ 9ea:	80 91 38 01 	lds	r24, 0x0138
+ 9ee:	08 95       	ret
+
+000009f0 <TWI_Start_Transceiver_With_Data>:
+Address byte is not included in the message buffers.
+The function will hold execution (loop) until the TWI_ISR has completed with the previous operation,
+then initialize the next operation and return.
+****************************************************************************/
+void TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize )
+{
+ 9f0:	48 2f       	mov	r20, r24
+ 9f2:	29 2f       	mov	r18, r25
+/****************************************************************************
+Call this function to test if the TWI_ISR is busy transmitting.
+****************************************************************************/
+unsigned char TWI_Transceiver_Busy( void )
+{
+  return ( TWCR & (1<<TWIE) );                  // IF TWI interrupt is enabled then the Transceiver is busy
+ 9f4:	80 91 bc 00 	lds	r24, 0x00BC
+****************************************************************************/
+void TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize )
+{
+  unsigned char temp;
+
+  while ( TWI_Transceiver_Busy() );             // Wait until TWI is ready for next transmission.
+ 9f8:	80 fd       	sbrc	r24, 0
+ 9fa:	fc cf       	rjmp	.-8      	; 0x9f4 <TWI_Start_Transceiver_With_Data+0x4>
+
+  TWI_msgSize = msgSize;                        // Number of data to transmit.
+ 9fc:	60 93 3d 01 	sts	0x013D, r22
+ a00:	ae e3       	ldi	r26, 0x3E	; 62
+ a02:	b1 e0       	ldi	r27, 0x01	; 1
+ a04:	84 2f       	mov	r24, r20
+ a06:	92 2f       	mov	r25, r18
+ a08:	9c 01       	movw	r18, r24
+ a0a:	f9 01       	movw	r30, r18
+ a0c:	02 c0       	rjmp	.+4      	; 0xa12 <TWI_Start_Transceiver_With_Data+0x22>
+  for ( temp = 0; temp < msgSize; temp++ )      // Copy data that may be transmitted if the TWI Master requests data.
+    TWI_buf[ temp ] = msg[ temp ];
+ a0e:	81 91       	ld	r24, Z+
+ a10:	8d 93       	st	X+, r24
+  unsigned char temp;
+
+  while ( TWI_Transceiver_Busy() );             // Wait until TWI is ready for next transmission.
+
+  TWI_msgSize = msgSize;                        // Number of data to transmit.
+  for ( temp = 0; temp < msgSize; temp++ )      // Copy data that may be transmitted if the TWI Master requests data.
+ a12:	8e 2f       	mov	r24, r30
+ a14:	84 1b       	sub	r24, r20
+ a16:	86 17       	cp	r24, r22
+ a18:	d0 f3       	brcs	.-12     	; 0xa0e <TWI_Start_Transceiver_With_Data+0x1e>
+    TWI_buf[ temp ] = msg[ temp ];
+  TWI_statusReg.all = 0;
+ a1a:	10 92 3c 01 	sts	0x013C, r1
+  TWI_state         = TWI_NO_STATE ;
+ a1e:	88 ef       	ldi	r24, 0xF8	; 248
+ a20:	80 93 38 01 	sts	0x0138, r24
+  TWCR = (1<<TWEN)|                             // TWI Interface enabled.
+ a24:	85 ec       	ldi	r24, 0xC5	; 197
+ a26:	80 93 bc 00 	sts	0x00BC, r24
+         (1<<TWIE)|(1<<TWINT)|                  // Enable TWI Interupt and clear the flag.
+         (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|       // Prepare to ACK next time the Slave is addressed.
+         (0<<TWWC);                             //
+}
+ a2a:	08 95       	ret
+
+00000a2c <TWI_Start_Transceiver>:
+/****************************************************************************
+Call this function to test if the TWI_ISR is busy transmitting.
+****************************************************************************/
+unsigned char TWI_Transceiver_Busy( void )
+{
+  return ( TWCR & (1<<TWIE) );                  // IF TWI interrupt is enabled then the Transceiver is busy
+ a2c:	80 91 bc 00 	lds	r24, 0x00BC
+in the transceiver buffers. The function will hold execution (loop) until the TWI_ISR has completed with the
+previous operation, then initialize the next operation and return.
+****************************************************************************/
+void TWI_Start_Transceiver( void )
+{
+  while ( TWI_Transceiver_Busy() );             // Wait until TWI is ready for next transmission.
+ a30:	80 fd       	sbrc	r24, 0
+ a32:	fc cf       	rjmp	.-8      	; 0xa2c <TWI_Start_Transceiver>
+  TWI_statusReg.all = 0;
+ a34:	10 92 3c 01 	sts	0x013C, r1
+  TWI_state         = TWI_NO_STATE ;
+ a38:	88 ef       	ldi	r24, 0xF8	; 248
+ a3a:	80 93 38 01 	sts	0x0138, r24
+  TWCR = (1<<TWEN)|                             // TWI Interface enabled.
+ a3e:	85 ec       	ldi	r24, 0xC5	; 197
+ a40:	80 93 bc 00 	sts	0x00BC, r24
+         (1<<TWIE)|(1<<TWINT)|                  // Enable TWI Interupt and clear the flag.
+         (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|       // Prepare to ACK next time the Slave is addressed.
+         (0<<TWWC);                             //
+}
+ a44:	08 95       	ret
+
+00000a46 <TWI_Get_Data_Depth>:
+with the returned length.
+****************************************************************************/
+unsigned char TWI_Get_Data_Depth(void)
+{
+    return TWI_bufPtr;
+}
+ a46:	80 91 67 01 	lds	r24, 0x0167
+ a4a:	08 95       	ret
+
+00000a4c <TWI_Get_Data_From_Transceiver>:
+to fetch in the function call. The function will hold execution (loop) until the TWI_ISR has completed
+with the previous operation, before reading out the data and returning.
+If there was an error in the previous transmission the function will return the TWI State code.
+****************************************************************************/
+unsigned char TWI_Get_Data_From_Transceiver( unsigned char *msg, unsigned char msgSize )
+{
+ a4c:	ac 01       	movw	r20, r24
+/****************************************************************************
+Call this function to test if the TWI_ISR is busy transmitting.
+****************************************************************************/
+unsigned char TWI_Transceiver_Busy( void )
+{
+  return ( TWCR & (1<<TWIE) );                  // IF TWI interrupt is enabled then the Transceiver is busy
+ a4e:	80 91 bc 00 	lds	r24, 0x00BC
+****************************************************************************/
+unsigned char TWI_Get_Data_From_Transceiver( unsigned char *msg, unsigned char msgSize )
+{
+  unsigned char i;
+
+  while ( TWI_Transceiver_Busy() );             // Wait until TWI is ready for next transmission.
+ a52:	80 fd       	sbrc	r24, 0
+ a54:	fc cf       	rjmp	.-8      	; 0xa4e <TWI_Get_Data_From_Transceiver+0x2>
+
+  if( TWI_statusReg.lastTransOK )               // Last transmission competed successfully.
+ a56:	80 91 3c 01 	lds	r24, 0x013C
+ a5a:	80 ff       	sbrs	r24, 0
+ a5c:	14 c0       	rjmp	.+40     	; 0xa86 <TWI_Get_Data_From_Transceiver+0x3a>
+ a5e:	20 e0       	ldi	r18, 0x00	; 0
+ a60:	30 e0       	ldi	r19, 0x00	; 0
+ a62:	0a c0       	rjmp	.+20     	; 0xa78 <TWI_Get_Data_From_Transceiver+0x2c>
+  {
+    for ( i=0; i<msgSize; i++ )                 // Copy data from Transceiver buffer.
+    {
+      msg[ i ] = TWI_buf[ i ];
+ a64:	fa 01       	movw	r30, r20
+ a66:	e2 0f       	add	r30, r18
+ a68:	f3 1f       	adc	r31, r19
+ a6a:	d9 01       	movw	r26, r18
+ a6c:	a2 5c       	subi	r26, 0xC2	; 194
+ a6e:	be 4f       	sbci	r27, 0xFE	; 254
+ a70:	8c 91       	ld	r24, X
+ a72:	80 83       	st	Z, r24
+ a74:	2f 5f       	subi	r18, 0xFF	; 255
+ a76:	3f 4f       	sbci	r19, 0xFF	; 255
+
+  while ( TWI_Transceiver_Busy() );             // Wait until TWI is ready for next transmission.
+
+  if( TWI_statusReg.lastTransOK )               // Last transmission competed successfully.
+  {
+    for ( i=0; i<msgSize; i++ )                 // Copy data from Transceiver buffer.
+ a78:	26 17       	cp	r18, r22
+ a7a:	a0 f3       	brcs	.-24     	; 0xa64 <TWI_Get_Data_From_Transceiver+0x18>
+    {
+      msg[ i ] = TWI_buf[ i ];
+    }
+    TWI_statusReg.RxDataInBuf = FALSE;          // Slave Receive data has been read from buffer.
+ a7c:	80 91 3c 01 	lds	r24, 0x013C
+ a80:	8d 7f       	andi	r24, 0xFD	; 253
+ a82:	80 93 3c 01 	sts	0x013C, r24
+ a86:	80 91 3c 01 	lds	r24, 0x013C
+  }
+  return( TWI_statusReg.lastTransOK );
+}
+ a8a:	81 70       	andi	r24, 0x01	; 1
+ a8c:	08 95       	ret
+
+00000a8e <__vector_26>:
+that is whenever a TWI event has occurred. This function should not be called directly from the main
+application.
+****************************************************************************/
+
+ISR(TWI_vect)
+{
+ a8e:	1f 92       	push	r1
+ a90:	0f 92       	push	r0
+ a92:	0f b6       	in	r0, 0x3f	; 63
+ a94:	0f 92       	push	r0
+ a96:	11 24       	eor	r1, r1
+ a98:	8f 93       	push	r24
+ a9a:	9f 93       	push	r25
+ a9c:	ef 93       	push	r30
+ a9e:	ff 93       	push	r31
+//  static unsigned char TWI_bufPtr;
+  
+  switch (TWSR)
+ aa0:	80 91 b9 00 	lds	r24, 0x00B9
+ aa4:	80 39       	cpi	r24, 0x90	; 144
+ aa6:	09 f4       	brne	.+2      	; 0xaaa <__vector_26+0x1c>
+ aa8:	49 c0       	rjmp	.+146    	; 0xb3c <__vector_26+0xae>
+ aaa:	81 39       	cpi	r24, 0x91	; 145
+ aac:	48 f4       	brcc	.+18     	; 0xac0 <__vector_26+0x32>
+ aae:	80 37       	cpi	r24, 0x70	; 112
+ ab0:	c1 f1       	breq	.+112    	; 0xb22 <__vector_26+0x94>
+ ab2:	80 38       	cpi	r24, 0x80	; 128
+ ab4:	09 f4       	brne	.+2      	; 0xab8 <__vector_26+0x2a>
+ ab6:	42 c0       	rjmp	.+132    	; 0xb3c <__vector_26+0xae>
+ ab8:	80 36       	cpi	r24, 0x60	; 96
+ aba:	09 f0       	breq	.+2      	; 0xabe <__vector_26+0x30>
+ abc:	59 c0       	rjmp	.+178    	; 0xb70 <__vector_26+0xe2>
+ abe:	36 c0       	rjmp	.+108    	; 0xb2c <__vector_26+0x9e>
+ ac0:	88 3a       	cpi	r24, 0xA8	; 168
+ ac2:	61 f0       	breq	.+24     	; 0xadc <__vector_26+0x4e>
+ ac4:	89 3a       	cpi	r24, 0xA9	; 169
+ ac6:	20 f4       	brcc	.+8      	; 0xad0 <__vector_26+0x42>
+ ac8:	80 3a       	cpi	r24, 0xA0	; 160
+ aca:	09 f0       	breq	.+2      	; 0xace <__vector_26+0x40>
+ acc:	51 c0       	rjmp	.+162    	; 0xb70 <__vector_26+0xe2>
+ ace:	54 c0       	rjmp	.+168    	; 0xb78 <__vector_26+0xea>
+ ad0:	88 3b       	cpi	r24, 0xB8	; 184
+ ad2:	39 f0       	breq	.+14     	; 0xae2 <__vector_26+0x54>
+ ad4:	80 3c       	cpi	r24, 0xC0	; 192
+ ad6:	09 f0       	breq	.+2      	; 0xada <__vector_26+0x4c>
+ ad8:	4b c0       	rjmp	.+150    	; 0xb70 <__vector_26+0xe2>
+ ada:	17 c0       	rjmp	.+46     	; 0xb0a <__vector_26+0x7c>
+  {
+    case TWI_STX_ADR_ACK:            // Own SLA+R has been received; ACK has been returned
+//    case TWI_STX_ADR_ACK_M_ARB_LOST: // Arbitration lost in SLA+R/W as Master; own SLA+R has been received; ACK has been returned
+      TWI_bufPtr   = 0;                                 // Set buffer pointer to first data location
+ adc:	10 92 67 01 	sts	0x0167, r1
+      TWI_DEACTIVATE_INT;                               // deactivate interrupt, as own address is read
+ ae0:	3a 98       	cbi	0x07, 2	; 7
+    case TWI_STX_DATA_ACK:           // Data byte in TWDR has been transmitted; ACK has been received
+     if (TWI_bufPtr >= TWI_BUFFER_SIZE) TWI_bufPtr = TWI_BUFFER_SIZE - 1;
+ ae2:	80 91 67 01 	lds	r24, 0x0167
+ ae6:	89 32       	cpi	r24, 0x29	; 41
+ ae8:	18 f0       	brcs	.+6      	; 0xaf0 <__vector_26+0x62>
+ aea:	88 e2       	ldi	r24, 0x28	; 40
+ aec:	80 93 67 01 	sts	0x0167, r24
+      TWDR = TWI_buf[TWI_bufPtr++];
+ af0:	90 91 67 01 	lds	r25, 0x0167
+ af4:	e9 2f       	mov	r30, r25
+ af6:	f0 e0       	ldi	r31, 0x00	; 0
+ af8:	e2 5c       	subi	r30, 0xC2	; 194
+ afa:	fe 4f       	sbci	r31, 0xFE	; 254
+ afc:	80 81       	ld	r24, Z
+ afe:	80 93 bb 00 	sts	0x00BB, r24
+ b02:	9f 5f       	subi	r25, 0xFF	; 255
+ b04:	90 93 67 01 	sts	0x0167, r25
+ b08:	31 c0       	rjmp	.+98     	; 0xb6c <__vector_26+0xde>
+             (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           //
+             (0<<TWWC);                                 //
+      break;
+    case TWI_STX_DATA_NACK:          // Data byte in TWDR has been transmitted; NACK has been received.
+                                     // I.e. this could be the end of the transmission.
+      if (TWI_bufPtr == TWI_msgSize) // Have we transceived all expected data?
+ b0a:	90 91 67 01 	lds	r25, 0x0167
+ b0e:	80 91 3d 01 	lds	r24, 0x013D
+ b12:	98 17       	cp	r25, r24
+ b14:	69 f5       	brne	.+90     	; 0xb70 <__vector_26+0xe2>
+      {
+        TWI_statusReg.lastTransOK = TRUE;               // Set status bits to completed successfully.
+ b16:	80 91 3c 01 	lds	r24, 0x013C
+ b1a:	81 60       	ori	r24, 0x01	; 1
+ b1c:	80 93 3c 01 	sts	0x013C, r24
+ b20:	2b c0       	rjmp	.+86     	; 0xb78 <__vector_26+0xea>
+             (0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Do not acknowledge on any new requests.
+             (0<<TWWC);                                 //
+      break;
+    case TWI_SRX_GEN_ACK:            // General call address has been received; ACK has been returned
+//    case TWI_SRX_GEN_ACK_M_ARB_LOST: // Arbitration lost in SLA+R/W as Master; General call address has been received; ACK has been returned
+      TWI_statusReg.genAddressCall = TRUE;
+ b22:	80 91 3c 01 	lds	r24, 0x013C
+ b26:	84 60       	ori	r24, 0x04	; 4
+ b28:	80 93 3c 01 	sts	0x013C, r24
+    case TWI_SRX_ADR_ACK:            // Own SLA+W has been received ACK has been returned
+//    case TWI_SRX_ADR_ACK_M_ARB_LOST: // Arbitration lost in SLA+R/W as Master; own SLA+W has been received; ACK has been returned
+                                                        // Dont need to clear TWI_S_statusRegister.generalAddressCall due to that it is the default state.
+      TWI_statusReg.RxDataInBuf = TRUE;
+ b2c:	80 91 3c 01 	lds	r24, 0x013C
+ b30:	82 60       	ori	r24, 0x02	; 2
+ b32:	80 93 3c 01 	sts	0x013C, r24
+      TWI_bufPtr   = 0;                                 // Set buffer pointer to first data location
+ b36:	10 92 67 01 	sts	0x0167, r1
+ b3a:	18 c0       	rjmp	.+48     	; 0xb6c <__vector_26+0xde>
+             (1<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Expect ACK on this transmission
+             (0<<TWWC);                                 //
+      break;
+    case TWI_SRX_ADR_DATA_ACK:       // Previously addressed with own SLA+W; data has been received; ACK has been returned
+    case TWI_SRX_GEN_DATA_ACK:       // Previously addressed with general call; data has been received; ACK has been returned
+        if (TWI_bufPtr >= TWI_BUFFER_SIZE) TWI_bufPtr = TWI_BUFFER_SIZE - 1;
+ b3c:	80 91 67 01 	lds	r24, 0x0167
+ b40:	89 32       	cpi	r24, 0x29	; 41
+ b42:	18 f0       	brcs	.+6      	; 0xb4a <__vector_26+0xbc>
+ b44:	88 e2       	ldi	r24, 0x28	; 40
+ b46:	80 93 67 01 	sts	0x0167, r24
+      TWI_buf[TWI_bufPtr++]     = TWDR;
+ b4a:	80 91 67 01 	lds	r24, 0x0167
+ b4e:	90 91 bb 00 	lds	r25, 0x00BB
+ b52:	e8 2f       	mov	r30, r24
+ b54:	f0 e0       	ldi	r31, 0x00	; 0
+ b56:	e2 5c       	subi	r30, 0xC2	; 194
+ b58:	fe 4f       	sbci	r31, 0xFE	; 254
+ b5a:	90 83       	st	Z, r25
+ b5c:	8f 5f       	subi	r24, 0xFF	; 255
+ b5e:	80 93 67 01 	sts	0x0167, r24
+      TWI_statusReg.lastTransOK = TRUE;                 // Set flag transmission successfull.
+ b62:	80 91 3c 01 	lds	r24, 0x013C
+ b66:	81 60       	ori	r24, 0x01	; 1
+ b68:	80 93 3c 01 	sts	0x013C, r24
+                                                        // Reset the TWI Interupt to wait for a new event.
+      TWCR = (1<<TWEN)|                                 // TWI Interface enabled
+ b6c:	85 ec       	ldi	r24, 0xC5	; 197
+ b6e:	05 c0       	rjmp	.+10     	; 0xb7a <__vector_26+0xec>
+    case TWI_SRX_GEN_DATA_NACK:      // Previously addressed with general call; data has been received; NOT ACK has been returned
+    case TWI_STX_DATA_ACK_LAST_BYTE: // Last data byte in TWDR has been transmitted (TWEA = “0”); ACK has been received
+//    case TWI_NO_STATE              // No relevant state information available; TWINT = “0”
+    case TWI_BUS_ERROR:         // Bus error due to an illegal START or STOP condition
+    default:
+      TWI_state = TWSR;                                 // Store TWI State as errormessage, operation also clears the Success bit.
+ b70:	80 91 b9 00 	lds	r24, 0x00B9
+ b74:	80 93 38 01 	sts	0x0138, r24
+      TWCR = (1<<TWEN)|                                 // Enable TWI-interface and release TWI pins
+ b78:	84 e0       	ldi	r24, 0x04	; 4
+ b7a:	80 93 bc 00 	sts	0x00BC, r24
+             (0<<TWIE)|(0<<TWINT)|                      // Disable Interupt
+             (0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           // Do not acknowledge on any new requests.
+             (0<<TWWC);                                 //
+  }
+}
+ b7e:	ff 91       	pop	r31
+ b80:	ef 91       	pop	r30
+ b82:	9f 91       	pop	r25
+ b84:	8f 91       	pop	r24
+ b86:	0f 90       	pop	r0
+ b88:	0f be       	out	0x3f, r0	; 63
+ b8a:	0f 90       	pop	r0
+ b8c:	1f 90       	pop	r1
+ b8e:	18 95       	reti
+
+00000b90 <__eerd_byte_m324a>:
+ b90:	f9 99       	sbic	0x1f, 1	; 31
+ b92:	fe cf       	rjmp	.-4      	; 0xb90 <__eerd_byte_m324a>
+ b94:	92 bd       	out	0x22, r25	; 34
+ b96:	81 bd       	out	0x21, r24	; 33
+ b98:	f8 9a       	sbi	0x1f, 0	; 31
+ b9a:	99 27       	eor	r25, r25
+ b9c:	80 b5       	in	r24, 0x20	; 32
+ b9e:	08 95       	ret
+
+00000ba0 <_exit>:
+ ba0:	f8 94       	cli
+
+00000ba2 <__stop_program>:
+ ba2:	ff cf       	rjmp	.-2      	; 0xba2 <__stop_program>

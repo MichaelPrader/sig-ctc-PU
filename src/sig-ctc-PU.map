@@ -1,0 +1,549 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              sig-ctc-PU.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              sig-ctc-PU.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega324a.o)
+                              sig-ctc-PU.o (__eerd_byte_m324a)
+
+Allocating common symbols
+Common symbol       size              file
+
+inputs_from_master  0x4               sig-ctc-PU.o
+TWI_Operation       0x5               sig-ctc-PU.o
+ddr_register_from_master
+                    0x4               sig-ctc-PU.o
+ticks               0x1               sig-ctc-PU.o
+quartersecs         0x1               sig-ctc-PU.o
+BlockTXBuffer       0x1fa             sig-ctc-PU.o
+BlockRXBuffer       0x1fa             sig-ctc-PU.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+LOAD sig-ctc-PU.o
+LOAD TWI_slave.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0xba4
+ *(.vectors)
+ .vectors       0x00000000       0x7c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000007c                . = ALIGN (0x2)
+                0x0000007c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000007c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000007c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000007c                __ctors_start = .
+ *(.ctors)
+                0x0000007c                __ctors_end = .
+                0x0000007c                __dtors_start = .
+ *(.dtors)
+                0x0000007c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000007c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+                0x0000007c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000007c        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000088       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000088                __do_copy_data
+ .init4         0x0000009e       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x0000009e                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000ae        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+ *(.init9)
+ *(.text)
+ .text          0x000000b6        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+                0x000000b6                __vector_22
+                0x000000b6                __vector_1
+                0x000000b6                __vector_24
+                0x000000b6                __vector_12
+                0x000000b6                __bad_interrupt
+                0x000000b6                __vector_6
+                0x000000b6                __vector_3
+                0x000000b6                __vector_23
+                0x000000b6                __vector_30
+                0x000000b6                __vector_25
+                0x000000b6                __vector_11
+                0x000000b6                __vector_13
+                0x000000b6                __vector_17
+                0x000000b6                __vector_19
+                0x000000b6                __vector_7
+                0x000000b6                __vector_27
+                0x000000b6                __vector_5
+                0x000000b6                __vector_4
+                0x000000b6                __vector_9
+                0x000000b6                __vector_2
+                0x000000b6                __vector_8
+                0x000000b6                __vector_14
+                0x000000b6                __vector_10
+                0x000000b6                __vector_16
+                0x000000b6                __vector_18
+ .text          0x000000ba      0x908 sig-ctc-PU.o
+                0x000003a0                __vector_28
+                0x00000424                initialize100HzTimer
+                0x00000158                BlockRingBufferPush
+                0x000000ba                mrbusCRC16Update
+                0x00000492                init
+                0x000004b2                main
+                0x0000011e                BlockRingBufferDepth
+                0x000004a4                TWI_Act_On_Failure_In_Last_Transmission
+                0x00000246                __vector_21
+                0x00000442                __vector_15
+                0x00000320                __vector_29
+                0x000003fa                BlockUartInitialize
+                0x000001e4                BlockRingBufferPop
+                0x0000013a                BlockRingBufferSpace
+                0x0000010e                BlockRingBufferInitialize
+                0x000002c6                __vector_20
+ .text          0x000009c2      0x1ce TWI_slave.o
+                0x00000a4c                TWI_Get_Data_From_Transceiver
+                0x00000a2c                TWI_Start_Transceiver
+                0x000009f0                TWI_Start_Transceiver_With_Data
+                0x00000a46                TWI_Get_Data_Depth
+                0x000009dc                TWI_Get_State_Info
+                0x000009ea                TWI_Get_State
+                0x000009d4                TWI_Transceiver_Busy
+                0x00000a8e                __vector_26
+                0x000009c2                TWI_Slave_Initialise
+ .text          0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega324a.o)
+                0x00000b90                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000b90        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00000b90       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega324a.o)
+                0x00000b90                __eerd_byte_m324a
+                0x00000ba0                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000ba0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000ba0                exit
+                0x00000ba0                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000ba0        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000ba4                _etext = .
+
+.data           0x00800100       0x3a load address 0x00000ba4
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+ .data          0x00800100       0x38 sig-ctc-PU.o
+                0x00800100                gio_port_register
+                0x00800118                MRBus_CRC16_HighTable
+                0x00800110                gio_ddr_register
+                0x00800128                MRBus_CRC16_LowTable
+                0x00800108                gio_pin_register
+ .data          0x00800138        0x1 TWI_slave.o
+ .data          0x00800139        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800139        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800139        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800139        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega324a.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080013a                . = ALIGN (0x2)
+ *fill*         0x00800139        0x1 00
+                0x0080013a                _edata = .
+                0x0080013a                PROVIDE (__data_end, .)
+
+.bss            0x0080013a      0x431
+                0x0080013a                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080013a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+ .bss           0x0080013a        0x2 sig-ctc-PU.o
+                0x0080013a                changed
+                0x0080013b                restart
+ .bss           0x0080013c       0x2c TWI_slave.o
+                0x0080013c                TWI_statusReg
+ .bss           0x00800168        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800168        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800168        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00800168        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega324a.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800168      0x403 sig-ctc-PU.o
+                0x00800168                inputs_from_master
+                0x0080016c                TWI_Operation
+                0x00800171                ddr_register_from_master
+                0x00800175                ticks
+                0x00800176                quartersecs
+                0x00800177                BlockTXBuffer
+                0x00800371                BlockRXBuffer
+                0x0080056b                PROVIDE (__bss_end, .)
+                0x00000ba4                __data_load_start = LOADADDR (.data)
+                0x00000bde                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080056b        0x0
+                0x0080056b                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080056b                PROVIDE (__noinit_end, .)
+                0x0080056b                _end = .
+                0x0080056b                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x40
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 sig-ctc-PU.o
+ .debug_aranges
+                0x00000020       0x20 TWI_slave.o
+
+.debug_pubnames
+                0x00000000      0x37a
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x274 sig-ctc-PU.o
+ .debug_pubnames
+                0x00000274      0x106 TWI_slave.o
+
+.debug_info     0x00000000      0xa23
+ *(.debug_info)
+ .debug_info    0x00000000      0x76e sig-ctc-PU.o
+ .debug_info    0x0000076e      0x2b5 TWI_slave.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x3ff
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x27a sig-ctc-PU.o
+ .debug_abbrev  0x0000027a      0x185 TWI_slave.o
+
+.debug_line     0x00000000      0xad4
+ *(.debug_line)
+ .debug_line    0x00000000      0x899 sig-ctc-PU.o
+ .debug_line    0x00000899      0x23b TWI_slave.o
+
+.debug_frame    0x00000000      0x1b0
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x110 sig-ctc-PU.o
+ .debug_frame   0x00000110       0xa0 TWI_slave.o
+
+.debug_str      0x00000000      0x4aa
+ *(.debug_str)
+ .debug_str     0x00000000      0x3a3 sig-ctc-PU.o
+                                0x3f6 (size before relaxing)
+ .debug_str     0x000003a3      0x107 TWI_slave.o
+                                0x201 (size before relaxing)
+
+.debug_loc      0x00000000      0x300
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x28d sig-ctc-PU.o
+ .debug_loc     0x0000028d       0x73 TWI_slave.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(sig-ctc-PU.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0x38
+ .debug_ranges  0x00000000       0x38 sig-ctc-PU.o
+
+Cross Reference Table
+
+Symbol                                            File
+BlockRXBuffer                                     sig-ctc-PU.o
+BlockRingBufferDepth                              sig-ctc-PU.o
+BlockRingBufferInitialize                         sig-ctc-PU.o
+BlockRingBufferPop                                sig-ctc-PU.o
+BlockRingBufferPush                               sig-ctc-PU.o
+BlockRingBufferSpace                              sig-ctc-PU.o
+BlockTXBuffer                                     sig-ctc-PU.o
+BlockUartInitialize                               sig-ctc-PU.o
+MRBus_CRC16_HighTable                             sig-ctc-PU.o
+MRBus_CRC16_LowTable                              sig-ctc-PU.o
+TWI_Act_On_Failure_In_Last_Transmission           sig-ctc-PU.o
+TWI_Get_Data_Depth                                TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_Get_Data_From_Transceiver                     TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_Get_State                                     TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_Get_State_Info                                TWI_slave.o
+TWI_Operation                                     sig-ctc-PU.o
+TWI_Slave_Initialise                              TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_Start_Transceiver                             TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_Start_Transceiver_With_Data                   TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_Transceiver_Busy                              TWI_slave.o
+                                                  sig-ctc-PU.o
+TWI_statusReg                                     TWI_slave.o
+                                                  sig-ctc-PU.o
+__bad_interrupt                                   c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__bss_end                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__bss_start                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__data_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_load_start                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_start                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__do_clear_bss                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                                                  TWI_slave.o
+                                                  sig-ctc-PU.o
+__do_copy_data                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                                                  TWI_slave.o
+                                                  sig-ctc-PU.o
+__eerd_byte_m324a                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega324a.o)
+                                                  sig-ctc-PU.o
+__heap_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__init                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__stack                                           c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_1                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_10                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_11                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_12                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_13                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_14                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_15                                       sig-ctc-PU.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_16                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_17                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_18                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_19                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_2                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_20                                       sig-ctc-PU.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_21                                       sig-ctc-PU.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_22                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_23                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_24                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_25                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_26                                       TWI_slave.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_27                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_28                                       sig-ctc-PU.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_29                                       sig-ctc-PU.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_3                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_30                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_4                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_5                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_6                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_7                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_8                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_9                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vector_default                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+__vectors                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+_exit                                             c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+changed                                           sig-ctc-PU.o
+ddr_register_from_master                          sig-ctc-PU.o
+exit                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+gio_ddr_register                                  sig-ctc-PU.o
+gio_pin_register                                  sig-ctc-PU.o
+gio_port_register                                 sig-ctc-PU.o
+init                                              sig-ctc-PU.o
+initialize100HzTimer                              sig-ctc-PU.o
+inputs_from_master                                sig-ctc-PU.o
+main                                              sig-ctc-PU.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm324a.o
+mrbusCRC16Update                                  sig-ctc-PU.o
+quartersecs                                       sig-ctc-PU.o
+restart                                           sig-ctc-PU.o
+ticks                                             sig-ctc-PU.o
